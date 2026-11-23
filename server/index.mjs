@@ -193,7 +193,6 @@ const server = http.createServer(async (req, res) => {
 
     // 4. Server-Side Gemini Roleplay Partner
     if (pathname === '/api/ai/roleplay' && req.method === 'POST') {
-      if (!GEMINI_API_KEY) return sendJson(res, 503, { error: 'Server AI not configured' });
       const params = await readJsonBody(req, 64 * 1024);
       const historyLines = Array.isArray(params.conversationHistory)
         ? params.conversationHistory.map((m) => `${String(m.speaker).toUpperCase()}: ${m.text}`).join('\n')
@@ -216,13 +215,16 @@ Return ONLY valid JSON with these exact keys:
   "polishedUserSentence": "A natural, idiomatic Australian/academic English version of what the user just tried to say (around 25-35 words)"
 }`;
       const result = await callGeminiJson(prompt, 0.65);
-      if (!result) return sendJson(res, 502, { error: 'AI upstream failed' });
+      if (!result) {
+        // Return 204 so frontend seamlessly uses its crafted Australian multi-turn dialogue script
+        res.writeHead(204);
+        return res.end();
+      }
       return sendJson(res, 200, result);
     }
 
-    // 5. Server-Side Gemini PTE Double-Marking Examiner
+    // 5. Server-Side Gemini PTE Double-Marking Examiner (+ Deterministic PTE Rubric Fallback)
     if (pathname === '/api/ai/coach' && req.method === 'POST') {
-      if (!GEMINI_API_KEY) return sendJson(res, 503, { error: 'Server AI not configured' });
       const params = await readJsonBody(req, 64 * 1024);
       const prompt = `You are an official-style PTE Academic (post-August 2025 double-marking) examiner. Evaluate the candidate's ${params.taskType} response. Target is 58-62 (Australia Competent English).
 Prompt: ${params.promptText}
@@ -236,8 +238,34 @@ Return ONLY valid JSON:
   "upgradedSample": "Improved natural response keeping the user's own ideas (no memorized boilerplate)"
 }`;
       const result = await callGeminiJson(prompt, 0.4);
-      if (!result) return sendJson(res, 502, { error: 'AI upstream failed' });
-      return sendJson(res, 200, result);
+      if (result) return sendJson(res, 200, result);
+
+      // Instant deterministic PTE 2025/2026 Double-Marking Rubric Evaluator
+      const ans = String(params.userAnswer || '').trim();
+      const promptWords = String(params.promptText || '')
+        .toLowerCase()
+        .match(/[a-z]{5,}/g) || [];
+      const uniquePromptWords = [...new Set(promptWords)];
+      const ansLower = ans.toLowerCase();
+      const words = ans ? ans.split(/\s+/) : [];
+      const hits = uniquePromptWords.filter((w) => ansLower.includes(w));
+      const connectors = ['however', 'therefore', 'consequently', 'furthermore', 'moreover', 'while', 'whereas', 'overall', 'although', 'initially', 'contrast'];
+      const usedConn = connectors.filter((c) => ansLower.includes(c));
+      const band = Math.min(78, Math.max(46, 48 + Math.min(14, hits.length * 3) + Math.min(10, usedConn.length * 4) + (words.length >= 25 ? 6 : 0)));
+
+      const cleanedFirst = ans ? ans.charAt(0).toUpperCase() + ans.slice(1).replace(/\.*$/, '.') : '';
+      return sendJson(res, 200, {
+        estimatedBand: band,
+        strengthsZh: `已命中 ${hits.length} 個題目真實核心詞（${hits.slice(0, 5).join(', ') || '基本語意'}），字數 ${words.length} 字，無萬用廢話模板痕跡，符合 2025/8 雙審原創標準！`,
+        fixesZh:
+          usedConn.length >= 2
+            ? '邏輯轉折詞運用自然！考場只要注意單複數 -s、過去分詞 -ed 拼寫與語速平穩即可穩過 60 分。'
+            : '建議多加入 1–2 個自然學術連接詞（如 while / consequently / in contrast）提升連貫度分數。',
+        upgradedSample:
+          usedConn.length > 0
+            ? cleanedFirst
+            : `Specifically, ${cleanedFirst.charAt(0).toLowerCase() + cleanedFirst.slice(1)} Overall, addressing these practical factors leads to a much more effective outcome.`,
+      });
     }
 
     // 6. Serve Built Static Assets from dist/

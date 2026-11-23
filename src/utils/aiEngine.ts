@@ -198,7 +198,7 @@ export async function callGeminiRoleplayAndFeedback(params: {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(params),
       });
-      if (resp.ok) return await resp.json();
+      if (resp.status === 200) return await resp.json();
     } catch {
       // Fallback
     }
