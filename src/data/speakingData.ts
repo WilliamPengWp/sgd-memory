@@ -1,152 +1,47 @@
 export interface RsQuestion {
   id: number;
-  chunkA: string; // First 50-60% chunk — safe 60-point target!
+  chunkA: string;
   chunkB: string;
   textZh: string;
   tip: string;
 }
 
 export const RS_QUESTIONS: RsQuestion[] = [
-  {
-    id: 1,
-    chunkA: 'Please make sure all mobile phones',
-    chunkB: 'are switched off during the lecture.',
-    textZh: '請確保所有手機在講座期間關機。',
-    tip: '60分策略：穩唸出前半句 6 字零卡頓，流利度直接滿分！are switched off 有連音。',
-  },
-  {
-    id: 2,
-    chunkA: 'The main concepts of these events',
-    chunkB: 'were not yet fully understood.',
-    textZh: '這些事件的核心概念尚未被完全理解。',
-    tip: '注意 concepts / events 複數氣音，前半意群超好抓。',
-  },
-  {
-    id: 3,
-    chunkA: 'Students who wish to apply for an extension',
-    chunkB: 'should contact their tutor before Friday.',
-    textZh: '欲申請延期的學生應在週五前聯繫導師。',
-    tip: '長句切在 extension 停半拍最自然，記不住全句時穩住前半段 8 字即可拿高分。',
-  },
-  {
-    id: 4,
-    chunkA: 'All essays and seminar papers submitted',
-    chunkB: 'must be emailed to your professor.',
-    textZh: '所有繳交的論文與研討報告都必須寄信給教授。',
-    tip: 'submitted 過去分詞後置修飾，重音在 mid。',
-  },
-  {
-    id: 5,
-    chunkA: 'There will be an open book exam',
-    chunkB: 'on Monday the twenty-eighth.',
-    textZh: '二十八號週一將舉行開書考。',
-    tip: 'an open book exam 連讀成 a-nopen-book-exam。',
-  },
-  {
-    id: 6,
-    chunkA: 'The campus tour will help you',
-    chunkB: 'get familiar with the teaching facilities.',
-    textZh: '校園導覽將協助你熟悉教學設施。',
-    tip: '短句爭取全句復述，facilities 重音在第二音節 cil。',
-  },
-  {
-    id: 7,
-    chunkA: 'You should include your name and student number',
-    chunkB: 'at the top of every page.',
-    textZh: '你應該在每一頁頂端寫上姓名與學號。',
-    tip: '以意群畫面記憶：姓名+學號 / 每頁頂端。',
-  },
-  {
-    id: 8,
-    chunkA: 'A balanced diet and regular exercise',
-    chunkB: 'can significantly reduce health risks.',
-    textZh: '均衡飲食與規律運動能顯著降低健康風險。',
-    tip: 'significantly 若卡嘴可只穩穩講完前半段或跳過副詞保流利度！',
-  },
-  {
-    id: 9,
-    chunkA: 'The library will remain open until midnight',
-    chunkB: 'throughout the final examination period.',
-    textZh: '期末考期間圖書館將開放至午夜。',
-    tip: 'remain open until midnight 畫面清楚，前半 7 字已超過 58% 字數！',
-  },
-  {
-    id: 10,
-    chunkA: 'Please hand in your lab reports',
-    chunkB: 'at the end of this afternoon session.',
-    textZh: '請在今天下午課程結束時繳交實驗報告。',
-    tip: 'hand in 連讀成 han-din。',
-  },
-  {
-    id: 11,
-    chunkA: 'Most university courses combine traditional lectures',
-    chunkB: 'with small group tutorial discussions.',
-    textZh: '多數大學課程結合傳統講座與小組導修討論。',
-    tip: 'combine A with B 結構，先鎖死前半句 6 個實詞。',
-  },
-  {
-    id: 12,
-    chunkA: 'Parking permits can be purchased online',
-    chunkB: 'or at the student service center.',
-    textZh: '停車證可於線上或學生服務中心購買。',
-    tip: '被動 can be purchased，online 後自然換氣。',
-  },
-  {
-    id: 13,
-    chunkA: 'Our research findings clearly demonstrate',
-    chunkB: 'the importance of early childhood education.',
-    textZh: '我們的研究結果清楚顯示幼兒教育的重要性。',
-    tip: 'demonstrate 重音在第一音節 dem。',
-  },
-  {
-    id: 14,
-    chunkA: 'Next week we will discuss the impact',
-    chunkB: 'of social media on consumer behavior.',
-    textZh: '下週我們將討論社群媒體對消費者行為的影響。',
-    tip: 'the impact of A on B 經典結構。',
-  },
-  {
-    id: 15,
-    chunkA: 'International students are invited to attend',
-    chunkB: 'the welcome reception on Tuesday evening.',
-    textZh: '誠摯邀請國際學生參加週二晚間的歡迎茶會。',
-    tip: 'are invited to attend 連讀順暢即可穩拿口說與聽力雙分。',
-  },
-  {
-    id: 16,
-    chunkA: 'Renewable energy technology has become much cheaper',
-    chunkB: 'over the past two decades.',
-    textZh: '過去二十年來再生能源技術已便宜許多。',
-    tip: 'much cheaper 與 over the past two decades 兩個清晰意群。',
-  },
-  {
-    id: 17,
-    chunkA: 'Please do not bring food or drinks',
-    chunkB: 'into the computer laboratory.',
-    textZh: '請勿將食物或飲料帶入電腦實驗室。',
-    tip: 'laboratory 美音 lab-ra-tory / 英澳音 la-bo-ra-tri 皆可。',
-  },
-  {
-    id: 18,
-    chunkA: 'All source materials must be properly cited',
-    chunkB: 'in the reference list at the end.',
-    textZh: '所有參考資料都必須在文末參考文獻中正確引用。',
-    tip: 'properly cited 發音清楚，前半 7 字已穩拿 2/3 內容分。',
-  },
-  {
-    id: 19,
-    chunkA: 'The workshop on software engineering practices',
-    chunkB: 'has been moved to Room 302.',
-    textZh: '軟體工程實務工作坊已改至 302 教室。',
-    tip: '你的本行單字 software engineering 秒記！Room three-oh-two。',
-  },
-  {
-    id: 20,
-    chunkA: 'Students are advised to check their email regularly',
-    chunkB: 'for important course announcements.',
-    textZh: '建議學生定期檢查信箱以獲取重要課程公告。',
-    tip: '前半 8 字完整獨立成意群，超好抓。',
-  },
+  {"id": 1, "chunkA": "The art museum is located", "chunkB": "across the street and near the theater.", "textZh": "美術館位於街對面、劇院附近。", "tip": "🔥 11月週預測 #1 · 空間方位畫面記憶：過馬路→劇院旁"},
+  {"id": 2, "chunkA": "Your wages will be put into", "chunkB": "your bank account on Thursday.", "textZh": "你的薪資將於週四匯入銀行帳戶。", "tip": "🔥 11月週預測 #2 · 發薪日畫面：週四進帳！"},
+  {"id": 3, "chunkA": "Globalisation has been an overwhelming", "chunkB": "urbanization phenomenon.", "textZh": "全球化一直是一股勢不可擋的都市化現象。", "tip": "🔥 11月週預測 #5 · 若後半繞口，穩穩唸完前半 5 字即達標！"},
+  {"id": 4, "chunkA": "You can register your card", "chunkB": "at the university student centre or the library.", "textZh": "你可在大學學生中心或圖書館登錄學生證。", "tip": "🔥 11月週預測 #7 · 前半 5 字完整獨立意群"},
+  {"id": 5, "chunkA": "Please keep the keys with you", "chunkB": "because the front door often locks automatically.", "textZh": "請隨身帶鑰匙，因為前門常自動上鎖。", "tip": "🔥 11月週預測 #8 · WFD 與 RS 雙重高頻重疊神題！"},
+  {"id": 6, "chunkA": "Students from different backgrounds", "chunkB": "can achieve a variety of qualifications.", "textZh": "不同背景的學生皆能取得多元學歷資格。", "tip": "🔥 11月週預測 #10 · 注意 backgrounds / qualifications 複數"},
+  {"id": 7, "chunkA": "Poverty, not a lack of food,", "chunkB": "is the main cause of global hunger.", "textZh": "貧窮而非糧食短缺，才是全球飢餓的主因。", "tip": "🔥 11月週預測 #13 · 逗號停頓節奏超明顯"},
+  {"id": 8, "chunkA": "Renewable energy sources are becoming", "chunkB": "increasingly important for reducing carbon emissions.", "textZh": "再生能源對減碳正變得日益重要。", "tip": "🔥 11月週預測 #14 · 前半 5 字零難度穩拿流利度滿分"},
+  {"id": 9, "chunkA": "If you show your student card,", "chunkB": "you will get a discount.", "textZh": "出示學生證即可享有折扣。", "tip": "🔥 11月週預測 #15 · 短句送分題，全句輕鬆秒殺！"},
+  {"id": 10, "chunkA": "The bus for London will leave", "chunkB": "ten minutes later than planned.", "textZh": "開往倫敦的巴士將比原定晚十分鐘發車。", "tip": "🔥 11月週預測 #16 · WFD 與 RS 雙棲真題！"},
+  {"id": 11, "chunkA": "After considering all the options,", "chunkB": "she decided to take the risk.", "textZh": "在評估所有選項後，她決定冒這個險。", "tip": "🔥 11月週預測 #17 · 兩段各 5–6 字，節奏極順"},
+  {"id": 12, "chunkA": "By logging in, you agree to", "chunkB": "all terms and conditions regarding your enrollment.", "textZh": "登入即代表你同意所有註冊相關條款。", "tip": "🔥 11月週預測 #21 · 工程師寫登入頁天天看的句子！"},
+  {"id": 13, "chunkA": "Compiling a bibliography can present", "chunkB": "a major challenge for some students.", "textZh": "編纂參考書目對部分學生而言是一大挑戰。", "tip": "🔥 11月週預測 #22 · bibliography 重音在 og"},
+  {"id": 14, "chunkA": "Tomorrow's lecture has been cancelled", "chunkB": "due to the power outage.", "textZh": "明天的講座因停電而取消。", "tip": "🔥 11月週預測 #23 · 停電放假畫面秒記！"},
+  {"id": 15, "chunkA": "Tomorrow evening, there will be", "chunkB": "a panel discussion on sustainable development.", "textZh": "明晚將有一場關於永續發展的座談會。", "tip": "🔥 11月週預測 #25 · panel discussion 座談會"},
+  {"id": 16, "chunkA": "There will be an opportunity", "chunkB": "to ask questions at the end of the meeting.", "textZh": "會議結束時將有提問機會。", "tip": "🔥 11月週預測 #28 · an opportunity 連音"},
+  {"id": 17, "chunkA": "Keeping organised class notes", "chunkB": "will make study time more efficient.", "textZh": "整理有序的課堂筆記能讓讀書時間更有效率。", "tip": "🔥 11月週預測 #33 · 前半 4 字主詞超紮實"},
+  {"id": 18, "chunkA": "You may use your student identification card", "chunkB": "to borrow books from the library.", "textZh": "你可使用學生證向圖書館借書。", "tip": "🔥 11月週預測 #34 · identification 重音在 ca"},
+  {"id": 19, "chunkA": "Tuition fees will vary", "chunkB": "according to the field of study.", "textZh": "學費將依就讀領域而有所不同。", "tip": "🔥 11月週預測 #37 · 短句全拿！"},
+  {"id": 20, "chunkA": "All essays and seminar papers submitted", "chunkB": "must be emailed to your tutor.", "textZh": "所有繳交的論文與研討報告都必須寄給導師。", "tip": "⚡ 螢火蟲高頻 #69 · submitted 後停半拍換氣"},
+  {"id": 21, "chunkA": "You can download all lecture handouts", "chunkB": "from the course website.", "textZh": "你可以從課程網站下載所有講義。", "tip": "🔥 11月週預測 #77 · 秒殺短句"},
+  {"id": 22, "chunkA": "Don't hesitate to email me", "chunkB": "if you have any questions.", "textZh": "若有任何問題請隨時寫信給我。", "tip": "🔥 11月週預測 #82 · 教授口頭禪送分題！"},
+  {"id": 23, "chunkA": "In this library, reserved collection books", "chunkB": "can be borrowed for up to three hours.", "textZh": "本館指定參考書最多可借閱三小時。", "tip": "🔥 11月週預測 #94 · up to three hours"},
+  {"id": 24, "chunkA": "There will be an open book exam", "chunkB": "on Monday, the twenty-eighth.", "textZh": "二十八號週一將舉行開書考。", "tip": "🔥 11月週預測 #103 · 經典必考題"},
+  {"id": 25, "chunkA": "Fees, results, and schedules", "chunkB": "will be available online on the university website.", "textZh": "費用、成績與課表將於大學網站線上公布。", "tip": "🔥 11月週預測 #107 · 前半三個複數名詞排比"},
+  {"id": 26, "chunkA": "If you want to receive the reimbursement,", "chunkB": "you must submit the original receipts.", "textZh": "若想申請報帳核銷，必須繳交收據正本。", "tip": "🔥 11月週預測 #114 · receipts 裡的 p 不發音！"},
+  {"id": 27, "chunkA": "Unfortunately, the two most interesting economic electives", "chunkB": "clash with my timetable.", "textZh": "很遺憾兩門最有趣的經濟選修課跟我的課表衝堂。", "tip": "🔥 11月週預測 #115 · clash with 衝堂"},
+  {"id": 28, "chunkA": "The minimal mark for distinction", "chunkB": "to be awarded is no less than seventy-five percent.", "textZh": "獲頒優等成績的最低分數門檻為 75%。", "tip": "🔥 11月週預測 #125 · 澳洲大學 HD/Distinction 制度！"},
+  {"id": 29, "chunkA": "The hypothesis needs to be tested", "chunkB": "in a more rigorous way.", "textZh": "這項假設需要以更嚴謹的方式進行驗證。", "tip": "🔥 11月週預測 #127 · 順暢好唸"},
+  {"id": 30, "chunkA": "The cafeteria closes soon,", "chunkB": "but the snack machine is accessible throughout the night.", "textZh": "學生餐廳快關了，但販賣機整晚都能用。", "tip": "🔥 11月週預測 #134 · 半夜趕 Code 買零食畫面！"},
+  {"id": 31, "chunkA": "Please register your student email account", "chunkB": "at your earliest convenience.", "textZh": "請儘早註冊你的學生信箱帳號。", "tip": "🔥 11月週預測 #136 · 商用萬金油片語"},
+  {"id": 32, "chunkA": "All students are encouraged to vote", "chunkB": "in the forthcoming elections.", "textZh": "鼓勵所有學生在即將到來的選舉中投票。", "tip": "🔥 11月週預測 #145 · WFD 同源題！"},
+  {"id": 33, "chunkA": "A computer virus destroyed", "chunkB": "all my files.", "textZh": "電腦病毒毀了我所有的檔案。", "tip": "🔥 11月週預測 #153 · 超短送分神題！"},
+  {"id": 34, "chunkA": "Even with the permit, finding a parking spot", "chunkB": "on campus is still impossible.", "textZh": "就算有停車證，在校園找車位依然是不可能的任務。", "tip": "🔥 11月週預測 #161 · 全球大學共同痛點！"},
+  {"id": 35, "chunkA": "Essays should be typed with double spacing", "chunkB": "on white paper.", "textZh": "論文應以雙倍行距列印於白紙上。", "tip": "🔥 11月週預測 #162 · double spacing 雙倍行距"},
 ];
 
 export interface RtsQuestion {
@@ -411,67 +306,56 @@ export const DI_QUESTIONS: DiQuestion[] = [
   },
 ];
 
+
 export interface RaQuestion {
   id: number;
   title: string;
-  markedText: string; // "/" marks sense group breath pauses
+  markedText: string;
   plainText: string;
   traps: string;
 }
 
 export const RA_QUESTIONS: RaQuestion[] = [
   {
-    id: 1,
-    title: 'Urban Green Spaces',
-    markedText:
-      'Modern urban planners / increasingly recognize that / public parks and green corridors / play a vital role / in reducing city temperatures. / Beyond environmental benefits, / accessible nature areas / encourage daily physical activity / and strengthen community bonds / among local residents.',
-    plainText:
-      'Modern urban planners increasingly recognize that public parks and green corridors play a vital role in reducing city temperatures. Beyond environmental benefits, accessible nature areas encourage daily physical activity and strengthen community bonds among local residents.',
-    traps: '注意詞尾複數 planners, parks, corridors, benefits, bonds, residents；accessible 重音在 ces。',
+    "id": 1,
+    "title": "Smart Cooking (🔥 2026/11 本週新預測 #27)",
+    "markedText": "You don't have to spend / a lot of time in the kitchen on weekends, / say nutrition experts and home chefs / who promote smart cooking habits. / The trend, / which has taken off on social media / and in lifestyle magazines this year, / encourages simple meal prep, / batch cooking, / and the use of time-saving appliances / to reduce stress.",
+    "plainText": "You don't have to spend a lot of time in the kitchen on weekends, say nutrition experts and home chefs who promote smart cooking habits. The trend, which has taken off on social media and in lifestyle magazines this year, encourages simple meal prep, batch cooking, and the use of time-saving appliances to reduce stress.",
+    "traps": "2026/11 最新預測真題！注意複數 experts, chefs, habits, magazines, appliances；encourages 加 s。"
   },
   {
-    id: 2,
-    title: 'Software Automation & Productivity',
-    markedText:
-      'Advances in cloud computing / and automated testing tools / have transformed / how engineering teams / deliver reliable software. / By catching integration errors early, / developers can focus more energy / on system architecture / and user experience design.',
-    plainText:
-      'Advances in cloud computing and automated testing tools have transformed how engineering teams deliver reliable software. By catching integration errors early, developers can focus more energy on system architecture and user experience design.',
-    traps: 'transformed (-ed) 輕吐 d 音；architecture 發音 ar-ki-tek-cher（ch 發 k 音！）。',
+    "id": 2,
+    "title": "Word Radical (🔥 2026/11 本週新預測 #28)",
+    "markedText": "The word radical / from the Latin word for roots / means anyone who advocates fundamental change / in the political system. / Literally, / a radical is one who proposes / to attack some political or social problem / by going deep into the social or economic fabric / to get at the root cause / and alter this basic weakness.",
+    "plainText": "The word radical from the Latin word for roots means anyone who advocates fundamental change in the political system. Literally, a radical is one who proposes to attack some political or social problem by going deep into the social or economic fabric to get at the root cause and alter this basic weakness.",
+    "traps": "2026/11 最新預測！advocates / proposes 記得發 s 尾音；Literally 重音在第一音節 Lit。"
   },
   {
-    id: 3,
-    title: 'Marine Biodiversity Research',
-    markedText:
-      'Coral reefs support / nearly a quarter of all marine species, / despite covering / less than one percent / of the ocean floor. / Protecting these fragile ecosystems / requires coordinated international policies / and sustainable coastal management.',
-    plainText:
-      'Coral reefs support nearly a quarter of all marine species, despite covering less than one percent of the ocean floor. Protecting these fragile ecosystems requires coordinated international policies and sustainable coastal management.',
-    traps: 'species 單複同形；fragile (fra-jail / fra-jil 皆可)；requires 加 s。',
+    "id": 3,
+    "title": "Future of Telecommunication (🔥 2026/11 預測 #32)",
+    "markedText": "As technology continues to evolve, / so too will telecommunication. / The development of 5G networks, / the Internet of Things, / and other emerging technologies / promise to transform the way / we communicate and interact with each other. / The future of telecommunication / is full of exciting possibilities / and endless potential.",
+    "plainText": "As technology continues to evolve, so too will telecommunication. The development of 5G networks, the Internet of Things, and other emerging technologies promise to transform the way we communicate and interact with each other. The future of telecommunication is full of exciting possibilities and endless potential.",
+    "traps": "5G 唸作 five-G；telecommunication 重音在 ca；possibilities 複數。"
   },
   {
-    id: 4,
-    title: 'Sleep & Memory Consolidation',
-    markedText:
-      'Neuroscience research indicates / that consistent quality sleep / is essential / for consolidating newly acquired information. / Students who sacrifice rest / for all-night study sessions / often experience reduced concentration / and slower problem-solving speed / the following day.',
-    plainText:
-      'Neuroscience research indicates that consistent quality sleep is essential for consolidating newly acquired information. Students who sacrifice rest for all-night study sessions often experience reduced concentration and slower problem-solving speed the following day.',
-    traps: 'Neuroscience 重音在開頭 Neu；indicates 加 s；acquired 勿漏 d。',
+    "id": 4,
+    "title": "Statistical Literacy (🔥 2026/11 預測 #33)",
+    "markedText": "Statistics are indicators of change / and allow meaningful comparisons to be made. / While it may be an issue / rather than the statistics as such / that grabs people's attention, / it should be recognized / that it is the statistics that inform the issues. / Statistical literacy / is the ability to accurately understand / and evaluate the data.",
+    "plainText": "Statistics are indicators of change and allow meaningful comparisons to be made. While it may be an issue rather than the statistics as such that grabs people's attention, it should be recognized that it is the statistics that inform the issues. Statistical literacy is the ability to accurately understand and evaluate the data.",
+    "traps": "Statistics 連發三個 s 音別打結，放慢 10% 語速反而更穩！grabs 加 s。"
   },
   {
-    id: 5,
-    title: 'Digital Archives in Libraries',
-    markedText:
-      'University libraries / have shifted from storing physical volumes / to curating vast digital repositories. / While electronic databases / allow instant remote access / for researchers worldwide, / preserving rare historical documents / still demands specialized climate control.',
-    plainText:
-      'University libraries have shifted from storing physical volumes to curating vast digital repositories. While electronic databases allow instant remote access for researchers worldwide, preserving rare historical documents still demands specialized climate control.',
-    traps: 'repositories 重音在 pos；demands 結尾 z 音不可吞掉。',
+    "id": 5,
+    "title": "Teaching Profession (🔥 2026/11 預測 #31)",
+    "markedText": "Teaching is indeed a challenging profession, / yet it continues to attract and retain individuals / year after year, / many of whom remain in the field / for five, ten, or even more years. / This enduring commitment / can be attributed to a combination / of intrinsic motivations / and the rewarding aspects of the profession.",
+    "plainText": "Teaching is indeed a challenging profession, yet it continues to attract and retain individuals year after year, many of whom remain in the field for five, ten, or even more years. This enduring commitment can be attributed to a combination of intrinsic motivations and the rewarding aspects of the profession.",
+    "traps": "attributed to 重音在 trib；intrinsic (內在的) 重音在 trin。"
   },
   {
-    id: 6,
-    title: 'Behavioral Economics in Daily Choices',
-    markedText:
-      'Traditional economic models / assume that consumers / always make rational financial decisions. / However, / empirical studies reveal / that subtle changes / in how options are presented / can dramatically influence / what people ultimately purchase.',
-    plainText:
-      'Traditional economic models assume that consumers always make rational financial decisions. However, empirical studies reveal that subtle changes in how options are presented can dramatically influence what people ultimately purchase.',
-    traps: '重點陷阱字：subtle 裡面的 b 不發音 (唸 suh-tl)！empirical 重音在 pir。',
-  },
+    "id": 6,
+    "title": "Software Automation & Cloud Engineering",
+    "markedText": "Advances in cloud computing / and automated testing tools / have transformed / how engineering teams / deliver reliable software. / By catching integration errors early, / developers can focus more energy / on system architecture / and user experience design.",
+    "plainText": "Advances in cloud computing and automated testing tools have transformed how engineering teams deliver reliable software. By catching integration errors early, developers can focus more energy on system architecture and user experience design.",
+    "traps": "architecture 發音 ar-ki-tek-cher（ch 發 k 音！）；transformed 輕吐 d。"
+  }
 ];

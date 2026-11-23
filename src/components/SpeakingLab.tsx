@@ -22,7 +22,7 @@ import {
 } from '../data/speakingData';
 import { DeckType, Rating, SrsCard, isCardDue, makeCardKey } from '../utils/srs';
 import { AccentPreference, resolvePublicAsset, speakEnglish, stopSpeaking } from '../utils/speech';
-import { MicStudioBar } from './MicStudioBar';
+import { AiSpeechScorerBox } from './AiSpeechScorerBox';
 import { SpeakingSubTab } from './MissionDashboard';
 
 interface SpeakingLabProps {
@@ -629,12 +629,16 @@ const SgdDeckView: React.FC<{
             </div>
           )}
 
-          {/* 2-Min Real Exam Mic Practice */}
-          <MicStudioBar
+          {/* 2-Min Real Exam Mic Practice + AI Speech Scorer */}
+          <AiSpeechScorerBox
             idPrefix={`sgd-${current.id}`}
+            taskLabel="SGD 小組討論摘要"
             prepSeconds={10}
             recordSeconds={120}
-            label="SGD 實戰錄音 (10s準備 + 120s作答)"
+            expectedKeywordsOrWords={current.speakers
+              .flatMap((s) => s.text.split(/\s+/))
+              .filter((w) => w.length >= 5)}
+            promptSummary={`${current.topic}: ${current.speakers.map((s) => s.text).join(' | ')}`}
             resetTrigger={current.id}
           />
 
@@ -879,11 +883,14 @@ export const SpeakingLab: React.FC<SpeakingLabProps> = ({
             </div>
           )}
 
-          <MicStudioBar
+          <AiSpeechScorerBox
             idPrefix={`rs-${rsItem.id}`}
+            taskLabel="RS 復述句子"
             prepSeconds={0}
             recordSeconds={15}
-            label="RS 15秒復述錄音"
+            expectedKeywordsOrWords={`${rsItem.chunkA} ${rsItem.chunkB}`.split(/\s+/)}
+            isVerbatimTask={true}
+            promptSummary={`${rsItem.chunkA} ${rsItem.chunkB}`}
             resetTrigger={rsItem.id}
           />
 
@@ -1000,11 +1007,16 @@ export const SpeakingLab: React.FC<SpeakingLabProps> = ({
             </ol>
           </div>
 
-          <MicStudioBar
+          <AiSpeechScorerBox
             idPrefix={`rts-${rtsItem.id}`}
+            taskLabel="RTS 情境回答"
             prepSeconds={10}
             recordSeconds={40}
-            label="RTS 考場模擬 (10s準備 + 40s第一人稱回答)"
+            expectedKeywordsOrWords={rtsItem.sampleResponse
+              .split(/\s+/)
+              .filter((w) => w.length >= 5)
+              .slice(0, 14)}
+            promptSummary={rtsItem.prompt}
             resetTrigger={rtsItem.id}
           />
 
@@ -1135,11 +1147,18 @@ export const SpeakingLab: React.FC<SpeakingLabProps> = ({
             <div>4. <strong>整體結論</strong>：Overall, {diItem.keyTrend}.</div>
           </div>
 
-          <MicStudioBar
+          <AiSpeechScorerBox
             idPrefix={`di-${diItem.id}`}
+            taskLabel="DI 圖表描述"
             prepSeconds={25}
             recordSeconds={40}
-            label="DI 考場模擬 (25s看圖 + 40s描述)"
+            expectedKeywordsOrWords={[
+              ...diItem.series.map((s) => s.label),
+              'highest',
+              'lowest',
+              'overall',
+            ]}
+            promptSummary={`${diItem.title}: ${diItem.safeSpeech}`}
             resetTrigger={diItem.id}
           />
 
@@ -1291,11 +1310,14 @@ export const SpeakingLab: React.FC<SpeakingLabProps> = ({
             </div>
           </div>
 
-          <MicStudioBar
+          <AiSpeechScorerBox
             idPrefix={`ra-${raItem.id}`}
+            taskLabel="RA 朗讀文本"
             prepSeconds={35}
             recordSeconds={40}
-            label="RA 考場模擬 (35s默讀切意群 + 40s朗讀)"
+            expectedKeywordsOrWords={raItem.plainText.split(/\s+/)}
+            isVerbatimTask={true}
+            promptSummary={raItem.plainText}
             resetTrigger={raItem.id}
           />
 

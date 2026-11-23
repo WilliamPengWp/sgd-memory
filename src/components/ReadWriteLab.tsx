@@ -10,6 +10,7 @@ import {
   AlertTriangle,
   Play,
   RotateCcw,
+  Sparkles,
 } from 'lucide-react';
 import {
   FIB_ITEMS,
@@ -18,6 +19,7 @@ import {
 } from '../data/rwData';
 import { Rating, SrsCard, isCardDue, makeCardKey } from '../utils/srs';
 import { AccentPreference, speakEnglish, stopSpeaking } from '../utils/speech';
+import { callGeminiWritingOrSpeakingCoach, getStoredGeminiKey } from '../utils/aiEngine';
 import { ReadWriteSubTab } from './MissionDashboard';
 
 interface ReadWriteLabProps {
@@ -48,6 +50,13 @@ export const ReadWriteLab: React.FC<ReadWriteLabProps> = ({
   const [showSample, setShowSample] = useState(false);
   const [timerSec, setTimerSec] = useState<number>(WRITING_PROMPTS[0].timeMinutes * 60);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [aiEssayFeedback, setAiEssayFeedback] = useState<{
+    estimatedBand: number;
+    strengthsZh: string;
+    fixesZh: string;
+    upgradedSample: string;
+  } | null>(null);
+  const [loadingEssayAi, setLoadingEssayAi] = useState(false);
 
   const fibPool = FIB_ITEMS.filter((item) => {
     if (fibFilter === 'all') return true;
@@ -594,6 +603,59 @@ export const ReadWriteLab: React.FC<ReadWriteLabProps> = ({
                   <div style={{ fontSize: '0.78rem', marginTop: '0.22rem', opacity: 0.9 }}>{chk.detail}</div>
                 </div>
               ))}
+            </div>
+
+            {/* Optional Gemini 2.5 Deep Essay Double-Review */}
+            <div style={{ marginTop: '0.9rem' }}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ width: '100%', fontSize: '0.82rem' }}
+                disabled={!draft.trim() || loadingEssayAi}
+                onClick={async () => {
+                  if (!getStoredGeminiKey()) {
+                    window.alert('請先點擊頁面右上角「AI 設定」填入免費 Google AI Studio Gemini API Key，即可啟動真人雙審級寫作精批！');
+                    return;
+                  }
+                  setLoadingEssayAi(true);
+                  const res = await callGeminiWritingOrSpeakingCoach({
+                    taskType: `PTE Academic ${activePrompt.type}`,
+                    promptText: activePrompt.sourceTextOrTranscript,
+                    userAnswer: draft,
+                  });
+                  setAiEssayFeedback(res);
+                  setLoadingEssayAi(false);
+                }}
+              >
+                <Sparkles size={15} />
+                {loadingEssayAi ? 'Gemini 雙審批改中…' : '呼叫 AI 雙審考官精批與地道改寫'}
+              </button>
+
+              {aiEssayFeedback && (
+                <div
+                  className="animate-in"
+                  style={{
+                    marginTop: '0.75rem',
+                    padding: '0.95rem',
+                    borderRadius: 'var(--radius-md)',
+                    background: 'var(--bg-input)',
+                    border: '1px solid hsla(197,82%,54%,0.3)',
+                    fontSize: '0.81rem',
+                    lineHeight: 1.6,
+                  }}
+                >
+                  <div style={{ fontWeight: 700, color: 'hsl(197,88%,72%)', marginBottom: '0.25rem' }}>
+                    🤖 AI 雙審預估寫作：{aiEssayFeedback.estimatedBand} / 90
+                  </div>
+                  <div style={{ marginBottom: '0.25rem' }}>👍 優點：{aiEssayFeedback.strengthsZh}</div>
+                  <div style={{ marginBottom: '0.35rem', color: 'var(--accent-amber)' }}>
+                    🔧 修正建議：{aiEssayFeedback.fixesZh}
+                  </div>
+                  <div style={{ color: 'var(--text-secondary)' }}>
+                    ✨ 升級改寫：{aiEssayFeedback.upgradedSample}
+                  </div>
+                </div>
+              )}
             </div>
 
             <div
