@@ -28,11 +28,13 @@ const MIME_TYPES = {
 
 let pool = null;
 if (DATABASE_URL) {
+  const useTls = DATABASE_URL.includes('sslmode=');
+  const cleanConnStr = DATABASE_URL.replace(/[?&]sslmode=[^&]+/g, '').replace(/\?$/, '');
   pool = new pg.Pool({
-    connectionString: DATABASE_URL,
+    connectionString: cleanConnStr,
     max: 4,
     idleTimeoutMillis: 30000,
-    ssl: DATABASE_URL.includes('sslmode=require') ? { rejectUnauthorized: false } : false,
+    ssl: useTls ? { rejectUnauthorized: false } : false,
   });
 }
 
