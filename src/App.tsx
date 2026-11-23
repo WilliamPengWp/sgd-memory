@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import {
   Compass,
   Blocks,
@@ -47,7 +47,12 @@ import {
   computeLevelInfo,
   playGameSfx,
 } from './utils/gamification';
-import { getStoredGeminiKey, setStoredGeminiKey } from './utils/aiEngine';
+import {
+  getRawLocalGeminiKey,
+  setStoredGeminiKey,
+  probeServerCapabilities,
+  isServerAiEnabled,
+} from './utils/aiEngine';
 import {
   MissionDashboard,
   NavTab,
@@ -91,6 +96,10 @@ export const App: React.FC = () => {
   );
   const [profile, setProfile] = useState<PlayerProfile>(() => loadPlayerProfile());
 
+  const [cloudReady, setCloudReady] = useState(false);
+  const [serverAiActive, setServerAiActive] = useState(false);
+  const hydratedFromCloudRef = useRef(false);
+
   // Modals
   const [showFireflyModal, setShowFireflyModal] = useState(false);
   const [fireflyPaste, setFireflyPaste] = useState('');
@@ -98,7 +107,76 @@ export const App: React.FC = () => {
   const [importFeedback, setImportFeedback] = useState<string | null>(null);
 
   const [showAiModal, setShowAiModal] = useState(false);
-  const [geminiKeyInput, setGeminiKeyInput] = useState(() => getStoredGeminiKey());
+  const [geminiKeyInput, setGeminiKeyInput] = useState(() => getRawLocalGeminiKey());
+
+  // Probe Oracle Server AI & Cloud PostgreSQL Sync on mount
+  useEffect(() => {
+    (async () => {
+      const caps = await probeServerCapabilities();
+      setServerAiActive(caps.serverAi);
+      if (caps.cloudSync) {
+        try {
+          const resp = await fetch('./api/sync?profile=william', { cache: 'no-store' });
+          if (resp.ok) {
+            const data = await resp.json();
+            if (data.found) {
+              const cloudHistLen = Array.isArray(data.history) ? data.history.length : 0;
+              const localHistLen = loadHistory().length;
+              if (cloudHistLen >= localHistLen) {
+                if (Array.isArray(data.customWfd)) {
+                  localStorage.setItem('pte60-custom-firefly-wfd-v1', JSON.stringify(data.customWfd));
+                  setCustomWfd(data.customWfd);
+                }
+                if (data.cards && typeof data.cards === 'object') {
+                  const merged = {
+                    ...loadAllCards(buildRegistrations(data.customWfd || [])),
+                    ...data.cards,
+                  };
+                  saveAllCards(merged);
+                  setCardsMap(merged);
+                }
+                if (Array.isArray(data.history)) {
+                  localStorage.setItem('pte60-studio-history-v1', JSON.stringify(data.history));
+                  setHistory(data.history);
+                }
+                if (data.weekly && typeof data.weekly === 'object') {
+                  saveWeeklyChecks(data.weekly);
+                  setWeeklyChecks(data.weekly);
+                }
+                if (data.player && typeof data.player === 'object' && typeof data.player.xp === 'number') {
+                  savePlayerProfile(data.player);
+                  setProfile(data.player);
+                }
+              }
+            }
+          }
+          hydratedFromCloudRef.current = true;
+          setCloudReady(true);
+        } catch {
+          // Offline fallback
+        }
+      }
+    })();
+  }, []);
+
+  // Auto-push state changes to Oracle PostgreSQL (debounced 900ms)
+  useEffect(() => {
+    if (!cloudReady || !hydratedFromCloudRef.current) return;
+    const t = window.setTimeout(() => {
+      fetch('./api/sync?profile=william', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cards: cardsMap,
+          history,
+          weekly: weeklyChecks,
+          customWfd,
+          player: profile,
+        }),
+      }).catch(() => {});
+    }, 900);
+    return () => window.clearTimeout(t);
+  }, [cloudReady, cardsMap, history, weeklyChecks, customWfd, profile]);
 
   const handleEarnXp = useCallback((xp: number, combo = 1) => {
     setProfile((prev) => awardPlayerXp(prev, xp, combo));
@@ -328,7 +406,7 @@ export const App: React.FC = () => {
               onClick={() => setShowAiModal(true)}
             >
               <Sparkles size={13} color="var(--accent-jade)" />
-              AI 設定
+              {serverAiActive || isServerAiEnabled() ? '☁️ 雲端AI已連線' : 'AI 設定'}
             </button>
           </div>
         </div>

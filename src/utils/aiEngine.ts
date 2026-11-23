@@ -2,14 +2,51 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 
 const GEMINI_KEY_STORAGE = 'pte60-gemini-api-key';
 
+let serverCapabilities = {
+  cloudSync: false,
+  serverAi: false,
+};
+
+export async function probeServerCapabilities(): Promise<{
+  cloudSync: boolean;
+  serverAi: boolean;
+}> {
+  try {
+    const resp = await fetch('./api/status', { cache: 'no-store' });
+    if (resp.ok) {
+      const data = await resp.json();
+      serverCapabilities = {
+        cloudSync: Boolean(data?.cloudSync),
+        serverAi: Boolean(data?.serverAi),
+      };
+    }
+  } catch {
+    // Static GitHub Pages fallback
+  }
+  return serverCapabilities;
+}
+
+export function isServerAiEnabled(): boolean {
+  return serverCapabilities.serverAi;
+}
+
 export function getStoredGeminiKey(): string {
+  const local = localStorage.getItem(GEMINI_KEY_STORAGE) || '';
+  if (local) return local;
+  return serverCapabilities.serverAi ? '__ORACLE_SERVER_AI__' : '';
+}
+
+export function getRawLocalGeminiKey(): string {
   return localStorage.getItem(GEMINI_KEY_STORAGE) || '';
 }
 
 export function setStoredGeminiKey(key: string): void {
   const clean = key.trim();
-  if (clean) localStorage.setItem(GEMINI_KEY_STORAGE, clean);
-  else localStorage.removeItem(GEMINI_KEY_STORAGE);
+  if (clean && clean !== '__ORACLE_SERVER_AI__') {
+    localStorage.setItem(GEMINI_KEY_STORAGE, clean);
+  } else if (!clean) {
+    localStorage.removeItem(GEMINI_KEY_STORAGE);
+  }
 }
 
 export interface PteSpeechScoreCard {
@@ -139,7 +176,7 @@ export function evaluateSpeakingAttempt(params: {
 }
 
 /**
- * Optional Gemini 2.5 Flash deep PTE examiner & dynamic roleplay partner
+ * Gemini 2.5 Flash deep PTE examiner & dynamic roleplay partner (Oracle Server Proxy + Local Key fallback)
  */
 export async function callGeminiRoleplayAndFeedback(params: {
   rolePersona: string;
@@ -153,8 +190,20 @@ export async function callGeminiRoleplayAndFeedback(params: {
   coachTipZh: string;
   polishedUserSentence: string;
 } | null> {
-  const apiKey = getStoredGeminiKey();
-  if (!apiKey) return null;
+  const localKey = getRawLocalGeminiKey();
+  if (!localKey && serverCapabilities.serverAi) {
+    try {
+      const resp = await fetch('./api/ai/roleplay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(params),
+      });
+      if (resp.ok) return await resp.json();
+    } catch {
+      // Fallback
+    }
+  }
+  if (!localKey) return null;
 
   const prompt = `You are acting as BOTH an Australian English roleplay character (${params.rolePersona}) AND a friendly PTE Academic Speaking Coach for a Taiwanese software engineer targeting PTE 60 (Competent English).
 Scenario: ${params.scenarioContext}
@@ -177,7 +226,7 @@ Return ONLY valid JSON with these exact keys:
   try {
     const resp = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(
-        apiKey
+        localKey
       )}`,
       {
         method: 'POST',
@@ -211,8 +260,20 @@ export async function callGeminiWritingOrSpeakingCoach(params: {
   fixesZh: string;
   upgradedSample: string;
 } | null> {
-  const apiKey = getStoredGeminiKey();
-  if (!apiKey) return null;
+  const localKey = getRawLocalGeminiKey();
+  if (!localKey && serverCapabilities.serverAi) {
+    try {
+      const resp = await fetch('./api/ai/coach', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(params),
+      });
+      if (resp.ok) return await resp.json();
+    } catch {
+      // Fallback
+    }
+  }
+  if (!localKey) return null;
 
   const sysPrompt = `You are an official-style PTE Academic (post-August 2025 double-marking) examiner. Evaluate the candidate's ${params.taskType} response. Target is 58-62 (Australia Competent English).
 Prompt: ${params.promptText}
@@ -229,7 +290,7 @@ Return ONLY valid JSON:
   try {
     const resp = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(
-        apiKey
+        localKey
       )}`,
       {
         method: 'POST',
