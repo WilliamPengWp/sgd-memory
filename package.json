@@ -1,0 +1,26 @@
+{
+  "name": "sgd-memory",
+  "private": true,
+  "version": "2.0.0",
+  "description": "PTE 60 Studio — 澳洲技術移民 (55-60分 Competent English) 高投報記憶與實戰系統 (WFD / SGD / RS / RTS / DI / FIB / Writing)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.2.0",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  }
+}
