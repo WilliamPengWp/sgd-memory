@@ -51,6 +51,7 @@ export interface MicRecorderState {
   secondsLeft: number;
   recordedSec: number;
   audioUrl: string | null;
+  audioBlob: Blob | null;
   level: number; // 0..100
   error: string | null;
   startWithPrep: (prepSec: number, recordSec: number) => void;
@@ -64,6 +65,7 @@ export function useMicRecorder(): MicRecorderState {
   const [secondsLeft, setSecondsLeft] = useState(0);
   const [recordedSec, setRecordedSec] = useState(0);
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
   const [level, setLevel] = useState(0);
   const [error, setError] = useState<string | null>(null);
 
@@ -111,12 +113,20 @@ export function useMicRecorder(): MicRecorderState {
   const beginRecording = useCallback(
     async (maxRecordSec: number) => {
       setError(null);
+      setAudioBlob(null);
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            echoCancellation: true,
+            noiseSuppression: true,
+            autoGainControl: true,
+          },
+        });
         streamRef.current = stream;
 
-        // Live level meter for anti-plosive / mic check
-        const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+        const AudioCtx =
+          window.AudioContext ||
+          (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
         if (AudioCtx) {
           const ctx = new AudioCtx();
           audioCtxRef.current = ctx;
@@ -142,7 +152,7 @@ export function useMicRecorder(): MicRecorderState {
         mediaRecorderRef.current = recorder;
 
         recorder.ondataavailable = (e) => {
-          if (e.data.size > 0) chunksRef.current.push(e.data);
+          if (e.data && e.data.size > 0) chunksRef.current.push(e.data);
         };
 
         recorder.onstop = () => {
@@ -152,13 +162,14 @@ export function useMicRecorder(): MicRecorderState {
             if (prev) URL.revokeObjectURL(prev);
             return url;
           });
+          setAudioBlob(blob);
           setRecordedSec(Math.max(1, Math.round((Date.now() - startTsRef.current) / 1000)));
           setPhase('recorded');
           cleanupResources();
         };
 
         startTsRef.current = Date.now();
-        recorder.start();
+        recorder.start(250);
         setPhase('recording');
         setSecondsLeft(maxRecordSec);
 
@@ -172,7 +183,7 @@ export function useMicRecorder(): MicRecorderState {
           }
         }, 1000);
       } catch {
-        setError('無法存取麥克風（請確認瀏覽器已允許麥克風權限，或直接口頭計時練習）');
+        setError('無法存取麥克風（請確認瀏覽器已允許麥克風權限）');
         setPhase('idle');
       }
     },
@@ -229,6 +240,7 @@ export function useMicRecorder(): MicRecorderState {
     setSecondsLeft(0);
     setRecordedSec(0);
     setError(null);
+    setAudioBlob(null);
     setAudioUrl((prev) => {
       if (prev) URL.revokeObjectURL(prev);
       return null;
@@ -240,6 +252,7 @@ export function useMicRecorder(): MicRecorderState {
     secondsLeft,
     recordedSec,
     audioUrl,
+    audioBlob,
     level,
     error,
     startWithPrep,

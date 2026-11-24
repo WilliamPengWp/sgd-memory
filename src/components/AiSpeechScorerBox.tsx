@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { Mic, Square, RotateCcw } from 'lucide-react';
 import { useMicRecorder } from '../utils/speech';
 import {
-  useLiveSpeechRecognition,
+  scoreRecordedAudioOnServer,
   evaluateSpeakingAttempt,
   callGeminiWritingOrSpeakingCoach,
   PteSpeechScoreCard,
@@ -31,43 +31,35 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
   onScored,
 }) => {
   const mic = useMicRecorder();
-  const stt = useLiveSpeechRecognition('en-US');
 
+  const [transcript, setTranscript] = useState('');
+  const [transcribingAudio, setTranscribingAudio] = useState(false);
   const [scoreCard, setScoreCard] = useState<PteSpeechScoreCard | null>(null);
   const [coach, setCoach] = useState<AiCoachDiagnosis | null>(null);
   const [scoringAi, setScoringAi] = useState(false);
   const [showTextFallback, setShowTextFallback] = useState(false);
+  const scoredBlobRef = useRef<Blob | null>(null);
 
-  const runFullAutoScoring = useCallback(
-    async (spokenText: string, durSec: number, hesitations: number) => {
-      const card = evaluateSpeakingAttempt({
-        transcript: spokenText,
-        durationSec: Math.max(durSec, 3),
-        hesitationCount: hesitations,
-        expectedKeywordsOrSentence: expectedKeywordsOrWords,
-        isVerbatimTask,
+  const runCoachDiagnosis = useCallback(
+    async (spokenText: string) => {
+      if (spokenText.trim().split(/\s+/).length < 3) return;
+      setScoringAi(true);
+      const diagnosis = await callGeminiWritingOrSpeakingCoach({
+        taskType: taskLabel,
+        promptText: promptSummary,
+        userAnswer: spokenText,
       });
-      setScoreCard(card);
-      onScored?.(card.overallBand);
-
-      if (spokenText.trim().length >= 3) {
-        setScoringAi(true);
-        const diagnosis = await callGeminiWritingOrSpeakingCoach({
-          taskType: taskLabel,
-          promptText: promptSummary,
-          userAnswer: spokenText,
-        });
-        setCoach(diagnosis);
-        setScoringAi(false);
-      }
+      setCoach(diagnosis);
+      setScoringAi(false);
     },
-    [expectedKeywordsOrWords, isVerbatimTask, onScored, promptSummary, taskLabel]
+    [promptSummary, taskLabel]
   );
 
   useEffect(() => {
     mic.reset();
-    stt.stop();
-    stt.setTranscript('');
+    scoredBlobRef.current = null;
+    setTranscript('');
+    setTranscribingAudio(false);
     setScoreCard(null);
     setCoach(null);
     setScoringAi(false);
@@ -75,28 +67,64 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resetTrigger]);
 
+  // Automatically upload recorded audio Blob to server faster-whisper + Gemini 3.8 as soon as recording stops!
   useEffect(() => {
-    if (mic.phase === 'recording' && !stt.isListening) {
-      stt.start();
-    } else if (mic.phase === 'recorded') {
-      if (stt.isListening) stt.stop();
-      // Give browser SpeechRecognition 250ms to flush final interim result
-      const t = window.setTimeout(() => {
-        const finalTranscript = stt.latestTranscriptRef.current;
-        runFullAutoScoring(
-          finalTranscript,
-          Math.max(mic.recordedSec, stt.durationSec, 3),
-          stt.hesitations
-        );
-      }, 250);
-      return () => window.clearTimeout(t);
+    if (mic.phase === 'recorded' && mic.audioBlob && scoredBlobRef.current !== mic.audioBlob) {
+      scoredBlobRef.current = mic.audioBlob;
+      (async () => {
+        setTranscribingAudio(true);
+        setScoreCard(null);
+        setCoach(null);
+
+        const whisperCard = await scoreRecordedAudioOnServer({
+          audioBlob: mic.audioBlob!,
+          taskType: taskLabel,
+          expectedWords: expectedKeywordsOrWords,
+          isVerbatimTask,
+        });
+
+        setTranscribingAudio(false);
+
+        if (whisperCard) {
+          const recognized = whisperCard.transcript || '';
+          setTranscript(recognized);
+          setScoreCard(whisperCard);
+          onScored?.(whisperCard.overallBand);
+          if (recognized.trim()) {
+            await runCoachDiagnosis(recognized);
+          }
+        } else {
+          // Offline / static GitHub Pages fallback prompt
+          setShowTextFallback(true);
+        }
+      })();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mic.phase]);
+  }, [
+    mic.phase,
+    mic.audioBlob,
+    taskLabel,
+    expectedKeywordsOrWords,
+    isVerbatimTask,
+    onScored,
+    runCoachDiagnosis,
+  ]);
+
+  const handleManualTextScore = async () => {
+    if (!transcript.trim()) return;
+    const card = evaluateSpeakingAttempt({
+      transcript,
+      durationSec: Math.max(mic.recordedSec, 8),
+      hesitationCount: 0,
+      expectedKeywordsOrSentence: expectedKeywordsOrWords,
+      isVerbatimTask,
+    });
+    setScoreCard(card);
+    onScored?.(card.overallBand);
+    await runCoachDiagnosis(transcript);
+  };
 
   return (
     <div className="ai-speech-unit" id={`${idPrefix}-ai-scorer`}>
-      {/* Primary Action Bar */}
       <div className="ai-mic-bar">
         <div className="ai-mic-status">
           {mic.phase === 'idle' && (
@@ -104,6 +132,8 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
               type="button"
               className="btn btn-primary btn-mic-main"
               onClick={() => {
+                scoredBlobRef.current = null;
+                setTranscript('');
                 setScoreCard(null);
                 setCoach(null);
                 mic.startImmediate(recordSeconds);
@@ -118,10 +148,7 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
             <button
               type="button"
               className="btn btn-stop-recording"
-              onClick={() => {
-                mic.stopRecording();
-                stt.stop();
-              }}
+              onClick={() => mic.stopRecording()}
             >
               <Square size={15} />
               完成回答 · 剩 {mic.secondsLeft}s
@@ -137,10 +164,11 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
                 type="button"
                 className="btn btn-secondary"
                 style={{ padding: '0.42rem 0.8rem', fontSize: '0.8rem' }}
+                disabled={transcribingAudio}
                 onClick={() => {
                   mic.reset();
-                  stt.stop();
-                  stt.setTranscript('');
+                  scoredBlobRef.current = null;
+                  setTranscript('');
                   setScoreCard(null);
                   setCoach(null);
                 }}
@@ -178,39 +206,44 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
         </div>
       )}
 
-      {/* Live Speech Transcript / Manual Text Input */}
-      {(mic.phase === 'recording' || mic.phase === 'recorded' || showTextFallback || stt.transcript) && (
-        <div className="transcript-box">
+      {transcribingAudio && (
+        <div className="result-callout animate-in" style={{ fontSize: '0.85rem', color: 'hsl(160, 70%, 66%)' }}>
+          🎙️ 正在將你的 {mic.recordedSec} 秒真實錄音送入 Whisper 聲學模型轉寫並計算發音清晰度…
+        </div>
+      )}
+
+      {/* Recognized Speech Transcript / Manual Text Input */}
+      {(!transcribingAudio && (mic.phase === 'recorded' || showTextFallback || transcript)) && (
+        <div className="transcript-box animate-in">
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+            {scoreCard?.sttEngine?.includes('whisper')
+              ? '🎤 Whisper 實測聽寫出你剛才唸的內容（可直接對照漏讀或發音模糊處）：'
+              : '英文回答內容：'}
+          </div>
           <textarea
             className="text-area-clean"
             rows={2}
-            placeholder={
-              mic.phase === 'recording'
-                ? '正在聆聽並即時轉寫你的英文發音…'
-                : '輸入或修改你的英文回答，按右側按鈕立即重算 AI 分數…'
-            }
-            value={stt.transcript}
-            onChange={(e) => stt.setTranscript(e.target.value)}
+            placeholder="輸入英文回答測試 AI 評分…"
+            value={transcript}
+            onChange={(e) => setTranscript(e.target.value)}
           />
-          {mic.phase !== 'recording' && stt.transcript.trim().length > 0 && (
+          {showTextFallback && mic.phase !== 'recorded' && transcript.trim().length > 0 && (
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.4rem' }}>
               <button
                 type="button"
                 className="btn btn-secondary"
                 style={{ padding: '0.32rem 0.75rem', fontSize: '0.78rem' }}
-                onClick={() =>
-                  runFullAutoScoring(stt.transcript, Math.max(mic.recordedSec, 8), stt.hesitations)
-                }
+                onClick={handleManualTextScore}
               >
-                更新 AI 評分
+                送出 AI 評分
               </button>
             </div>
           )}
         </div>
       )}
 
-      {/* Unified Automatic AI Score Card */}
-      {scoreCard && (
+      {/* Unified Real Acoustic + LLM Score Card */}
+      {scoreCard && !transcribingAudio && (
         <div
           className={`ai-score-card animate-in ${
             scoreCard.overallBand >= 54 ? 'pass' : 'warn'
@@ -224,20 +257,32 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
             <div className="ai-subscores">
               <span>內容 {scoreCard.contentScore}/6</span>
               <span>流利度 {scoreCard.fluencyScore}/5 ({scoreCard.wpm} WPM)</span>
-              <span>發音 {scoreCard.pronunciationScore}/5</span>
+              <span>
+                發音 {scoreCard.pronunciationScore}/5
+                {typeof scoreCard.clarityPct === 'number' ? ` (${scoreCard.clarityPct}%)` : ''}
+              </span>
             </div>
           </div>
 
           <div className="ai-verdict-line">{scoreCard.verdictZh}</div>
 
+          {scoreCard.lowClarityWords && scoreCard.lowClarityWords.length > 0 && (
+            <div style={{ fontSize: '0.79rem', color: 'var(--accent-amber)', marginTop: '0.35rem' }}>
+              ⚠️ 發音較模糊單字：{scoreCard.lowClarityWords.join(', ')}
+            </div>
+          )}
+
           {scoringAi && (
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.4rem' }}>
-              AI 考官正在雙審診斷語意與結構…
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.45rem' }}>
+              🤖 Gemini 考官正在針對你的回答撰寫雙審診斷建議…
             </div>
           )}
 
           {coach && !scoringAi && (
             <div className="ai-coach-notes">
+              <div style={{ fontSize: '0.73rem', color: 'var(--text-muted)', marginBottom: '0.25rem', fontFamily: 'var(--font-mono)' }}>
+                AI 考官引擎：{coach.aiModel || 'gemini-3.8-flash'}
+              </div>
               <div>✓ {coach.strengthsZh}</div>
               <div style={{ color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
                 → {coach.fixesZh}
