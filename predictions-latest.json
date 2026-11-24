@@ -1,0 +1,2988 @@
+{
+  "syncedAt": "2026-11-24T16:47:41.596Z",
+  "weekLabel": "16–22 November 2026",
+  "counts": {
+    "wfd": 160,
+    "rs": 120,
+    "ra": 30,
+    "swt": 20,
+    "we": 20
+  },
+  "wfd": [
+    {
+      "id": 2001,
+      "text": "All industries consist of input process output and feedback.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2002,
+      "text": "Statistically speaking the likelihood of the result is extremely low.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2003,
+      "text": "Nursing is defined as a combination of medical practice and clinical work.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2004,
+      "text": "The manager will have a meeting in this room today.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2005,
+      "text": "The conference will be held on Thursday morning.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2006,
+      "text": "Canada has a long history of immigration from many different parts of the world.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2007,
+      "text": "We are encouraged to write on each page.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2008,
+      "text": "Tact is the knack of making a point without making an enemy.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2009,
+      "text": "Her design incorporates the best aspects of modern architecture.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2010,
+      "text": "Islands in polar regions are ideal for astrophysicists and meteorologists to carry out field experiments.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2011,
+      "text": "Your boss wants you to finish this report by Monday.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2012,
+      "text": "Honey can be used as food and as a health product.",
+      "isNew": true,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2013,
+      "text": "Art and design are competitive fields to work in.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2014,
+      "text": "Universities need to secure grants for research subjects.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2015,
+      "text": "Chemical reactions occur when substances combine or change.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2016,
+      "text": "All experimental procedures are outlined in the laboratory manual.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2017,
+      "text": "There is a lot of debate about that topic.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2018,
+      "text": "The farmers need to adapt to the changes in the climate.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2019,
+      "text": "How important is packaging in the market for buyers?",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2020,
+      "text": "Please keep the key with you because the front door often locks automatically.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2021,
+      "text": "Photography can be really useful in geographical research.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2022,
+      "text": "It is quite clear that our facial expressions are different across the world.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2023,
+      "text": "Research shows that training outdoors has benefits.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2024,
+      "text": "Coursework gives students the chance to thoroughly explore the subject.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2025,
+      "text": "A university degree is a requirement to enter many professions.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2026,
+      "text": "You can find the complaint form on the website.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2027,
+      "text": "Class participation is an important part of your final grade.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2028,
+      "text": "Mathematics provides a foundation for understanding and analyzing data.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2029,
+      "text": "Football is played throughout all years at the university.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2030,
+      "text": "We are looking for new ways to engage learners.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2031,
+      "text": "When you attend a job interview punctuality is the key.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2032,
+      "text": "To get to the restroom go into the hall and turn right.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2033,
+      "text": "Extension requests for the assignment must be submitted before the deadline.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2034,
+      "text": "Online courses allow students to work at their own pace.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2035,
+      "text": "Show your passport and boarding pass at the gate.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2036,
+      "text": "The students are supposed to assemble in the seminar hall before the announcement.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2037,
+      "text": "Please make an appointment to see the manager.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2038,
+      "text": "The marine environment has been destroyed by pollution and unsustainable development.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2039,
+      "text": "Designers need to keep up with social trends.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2040,
+      "text": "You can get coffee and tea in the lunchroom.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2041,
+      "text": "You will get coffee and tea in the next room.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2042,
+      "text": "I think its one of the best things I have done recently.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2043,
+      "text": "A new collection of articles has just been published.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2044,
+      "text": "Computers used to be larger than they are now.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2045,
+      "text": "Social psychology is concerned with the understanding of human behaviors.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2046,
+      "text": "The population has had a sharp rise in the past twenty years.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2047,
+      "text": "You can use your laptops in the lecture.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2048,
+      "text": "Our courses are designed to enhance critical and independent thinking skills.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2049,
+      "text": "The science library is situated at the librarys ground level.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2050,
+      "text": "The student advisor was aware that todays lecture was not happening.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2051,
+      "text": "Our company is planning to recruit many new employees worldwide.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2052,
+      "text": "A massive amount of data was transformed into a clear argument.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2053,
+      "text": "People look at organizational failure in different ways in studies.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2054,
+      "text": "When the roots of a plant fail foliage suffers.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2055,
+      "text": "The course involves a combination of pure and applied mathematics.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2056,
+      "text": "A mixture is defined as a compound of chemically separate parts.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2057,
+      "text": "Currently the growth of the company is unpredictable.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2058,
+      "text": "Political power only disappears when this stage has been completed.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2059,
+      "text": "The new law was harder to impose than the government thought.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2060,
+      "text": "The visiting speaker used to be a lecturer in this department.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2061,
+      "text": "The professor took one year working on her book.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2062,
+      "text": "The marketing budget is doubled since the beginning of the year.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2063,
+      "text": "The department has a higher proportion of postgraduate students.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2064,
+      "text": "The business parliament seminar includes an internship with a local firm.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2065,
+      "text": "Our medical school students must attend the talk about optional courses.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2066,
+      "text": "The article considered leisure habits of teenagers in rural areas or places.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2067,
+      "text": "It is really a comprehensive program that covers both theory and practice.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2068,
+      "text": "The nation achieved prosperity by opening its exports for trade.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2069,
+      "text": "Optional tutorials are offered in the final week of the term.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2070,
+      "text": "Traffic is the main cause of pollution in main cities.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2071,
+      "text": "We can have a lecture on the morning of Thursday.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2072,
+      "text": "Native speakers are always exempted in the exam for their own language.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2073,
+      "text": "He has landed the job in a prestigious law firm.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2074,
+      "text": "I dont think its possible to solve the problem easily.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2075,
+      "text": "The business plan seminar includes an internship with a local firm.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2076,
+      "text": "You can use your laptop during the lecture.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2077,
+      "text": "We cannot consider an increase in price at this stage.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2078,
+      "text": "Organizational failure is considered the large range of specific areas in academic literature.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2079,
+      "text": "The curriculum needs to be adjusted for development.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2080,
+      "text": "Students representatives will visit classes with voting forms.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2081,
+      "text": "The vocabulary that has peculiar meanings is called jargon.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2082,
+      "text": "All industries consist of the systems as inputs processes outputs and feedback.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2083,
+      "text": "The summer school programs allow students to summarize their studies.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2084,
+      "text": "We encourage students to submit their applications before the deadline.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2085,
+      "text": "Before choosing your university courses you should consider your future career.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2086,
+      "text": "Somehow she earned a university degree despite many difficulties.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2087,
+      "text": "The investment will be dedicated to improving transport infrastructure.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2088,
+      "text": "The university has evolved into a modern institution of higher education.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2089,
+      "text": "You should have the sense to take advice when its offered.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2090,
+      "text": "There is no ideal debate on this topic.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2091,
+      "text": "You will acquire many skills during the academic studies.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2092,
+      "text": "His analysis appeared to be based on the fourth premise.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2093,
+      "text": "Please note that the seminar has now been canceled.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "their"
+      ]
+    },
+    {
+      "id": 2094,
+      "text": "The cooperator operates a continuous assessment.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2095,
+      "text": "Many universities have successfully developed online courses over the last year.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2096,
+      "text": "The university plans to build more libraries and more meeting rooms.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2097,
+      "text": "The article considered the leisure habits of teenagers in rural areas.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2098,
+      "text": "Students should have awareness of how the business develops globally.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2099,
+      "text": "Studies showed there is a positive correlation between the two variables.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2100,
+      "text": "The director of the gallery was grateful for the anonymous donation.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2101,
+      "text": "The other book isnt thorough but its more insightful.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2102,
+      "text": "The results of the study underscored the discoveries from early detections.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2103,
+      "text": "The earths atmosphere is primarily composed of oxygen and nitrogen gases.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2104,
+      "text": "The rising temperature is changing the wildlife population.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2105,
+      "text": "Education and training provide important skills for the labor force.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2106,
+      "text": "It is not possible to solve the problem easily.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2107,
+      "text": "The economy is now showing the first sign of recovery.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2108,
+      "text": "Novelists write things that they know about.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2109,
+      "text": "Manufacturing now brings in more people than agriculture and fishing combined.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2110,
+      "text": "Graduates from this course generally find jobs in the insurance industry.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2111,
+      "text": "Much of this research is carried out in the laboratory.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2112,
+      "text": "There is a lot of traffic in the morning.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2113,
+      "text": "The classical mechanism is considered a branch of mathematics.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2114,
+      "text": "A pie chart provides a useful means of data comparison.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2115,
+      "text": "Please close the door behind you when you leave the room.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2116,
+      "text": "Our laboratory equipment is provided free of charge.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2117,
+      "text": "Please turn off the light to save energy.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2118,
+      "text": "The food crops require a large quantity of water and fertilizer.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2119,
+      "text": "The restrooms are down the hall to the right.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2120,
+      "text": "Food containing overabundant calories supplies little or no nutritional value.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2121,
+      "text": "New media journalism is an interesting field of study.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2122,
+      "text": "Industry experts will discuss job opportunities in an automated workforce.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2123,
+      "text": "The employment demand in engineering is increasing rapidly.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2124,
+      "text": "The use of mobile phone is not permitted in the library.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2125,
+      "text": "Many diseases on the list have been eradicated.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2126,
+      "text": "An effective business manager is always open to new ideas.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2127,
+      "text": "All the educational reforms have been inadequately implemented.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2128,
+      "text": "An archaeologists new discovery stands out in previously overlooked foundations.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2129,
+      "text": "His appointment with the Minister of Culture seems like a demotion.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2130,
+      "text": "Employment figures are expected to be improved in the next few years.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2131,
+      "text": "The economic status of the early Roman Republic will be examined.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2132,
+      "text": "Educational level is found to be related to social and economic backgrounds.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2133,
+      "text": "I thought it was thrown in a small meeting room.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2134,
+      "text": "Most university teaching takes place in lectures and seminars.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2135,
+      "text": "Our professor is hosting the business development conference.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2136,
+      "text": "The organization plays an important role in academic literature.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2137,
+      "text": "Scientific beneficiary to space exploration is frequently questioned.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2138,
+      "text": "She began by giving an outline of the previous lecture.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2139,
+      "text": "Some people regarded it as care while others regarded it as recklessness.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2140,
+      "text": "The archaeologists new discoveries stand out in previously overlooked foundations.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2141,
+      "text": "The business policy seminar includes an internship with a local firm.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2142,
+      "text": "The dance department stages elaborated performances each semester.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2143,
+      "text": "Sugar is a compound that consists of carbon oxygen and hydrogen.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2144,
+      "text": "The faculty staff is very approachable helpful and extremely friendly.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2145,
+      "text": "The massive accumulation of data was converted to a communicable argument.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2146,
+      "text": "The new paper challenged many previously accepted theories.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2147,
+      "text": "The new technician dropped the microscope in the biology lab.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2148,
+      "text": "New materials and techniques are changing the way of architecture.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2149,
+      "text": "There is clearly a need for further research in this field.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2150,
+      "text": "There was a prize for the best student in the presentation.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2151,
+      "text": "We are able to work in a team.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2152,
+      "text": "We can work together to achieve higher educational standards.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2153,
+      "text": "We cant consider any increase in our price at this stage.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2154,
+      "text": "The summer course was canceled due to insufficient enrolments.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2155,
+      "text": "There is a welcome party for all new students each term.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2156,
+      "text": "Tutors should set goals at the start of the class.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2157,
+      "text": "The visiting guest used to be the lecturer of this department.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2158,
+      "text": "Farming methods around the world have greatly developed recently.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2159,
+      "text": "Mature students usually adapt to university life extremely well.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    },
+    {
+      "id": 2160,
+      "text": "The industrial revolution in Europe was driven by steam technology.",
+      "isNew": false,
+      "distractors": [
+        "were",
+        "has"
+      ]
+    }
+  ],
+  "rs": [
+    {
+      "id": 3001,
+      "chunkA": "The art museum is located across the",
+      "chunkB": "street and near the theater.",
+      "isNew": true
+    },
+    {
+      "id": 3002,
+      "chunkA": "Your wages will be put into your",
+      "chunkB": "bank account on Thursday.",
+      "isNew": true
+    },
+    {
+      "id": 3003,
+      "chunkA": "I have to get up early",
+      "chunkB": "for an interview tomorrow.",
+      "isNew": true
+    },
+    {
+      "id": 3004,
+      "chunkA": "The bus for London will",
+      "chunkB": "leave early tomorrow morning.",
+      "isNew": true
+    },
+    {
+      "id": 3005,
+      "chunkA": "Globalisation has been an",
+      "chunkB": "overwhelming urbanization phenomenon.",
+      "isNew": true
+    },
+    {
+      "id": 3006,
+      "chunkA": "Evaporation is the process of",
+      "chunkB": "turning liquid into gas.",
+      "isNew": true
+    },
+    {
+      "id": 3007,
+      "chunkA": "You can register your card at the university",
+      "chunkB": "student centre or the library.",
+      "isNew": true
+    },
+    {
+      "id": 3008,
+      "chunkA": "Please keep the keys with you because the",
+      "chunkB": "front door often locks automatically.",
+      "isNew": true
+    },
+    {
+      "id": 3009,
+      "chunkA": "You need warmer clothes for winter.",
+      "chunkB": "",
+      "isNew": true
+    },
+    {
+      "id": 3010,
+      "chunkA": "Students from different backgrounds can achieve",
+      "chunkB": "a variety of qualifications.",
+      "isNew": true
+    },
+    {
+      "id": 3011,
+      "chunkA": "Find a bookstore situated on the",
+      "chunkB": "main campus northern side.",
+      "isNew": true
+    },
+    {
+      "id": 3012,
+      "chunkA": "I will try to get through it",
+      "chunkB": "as soon as possible.",
+      "isNew": true
+    },
+    {
+      "id": 3013,
+      "chunkA": "Poverty, not a lack of food,",
+      "chunkB": "is the main cause of global hunger.",
+      "isNew": false
+    },
+    {
+      "id": 3014,
+      "chunkA": "Renewable energy sources are becoming increasingly important",
+      "chunkB": "for reducing carbon emissions.",
+      "isNew": false
+    },
+    {
+      "id": 3015,
+      "chunkA": "If you show your student card,",
+      "chunkB": "you will get a discount.",
+      "isNew": false
+    },
+    {
+      "id": 3016,
+      "chunkA": "The bus for London will leave 10",
+      "chunkB": "minutes later than planned.",
+      "isNew": false
+    },
+    {
+      "id": 3017,
+      "chunkA": "After considering all the options she decided",
+      "chunkB": "to take the risk.",
+      "isNew": false
+    },
+    {
+      "id": 3018,
+      "chunkA": "Knowledge plays a vital role",
+      "chunkB": "in young generations.",
+      "isNew": false
+    },
+    {
+      "id": 3019,
+      "chunkA": "Such behaviours are regarded as a",
+      "chunkB": "deviation from the norm.",
+      "isNew": false
+    },
+    {
+      "id": 3020,
+      "chunkA": "Living in the 21st century",
+      "chunkB": "is increasingly stressful.",
+      "isNew": false
+    },
+    {
+      "id": 3021,
+      "chunkA": "By logging in, you agree to all terms",
+      "chunkB": "and conditions regarding your enrollment.",
+      "isNew": false
+    },
+    {
+      "id": 3022,
+      "chunkA": "Compiling a bibliography can present a major",
+      "chunkB": "challenge for some students.",
+      "isNew": false
+    },
+    {
+      "id": 3023,
+      "chunkA": "Tomorrow's lecture has been cancelled due",
+      "chunkB": "to the power outage.",
+      "isNew": false
+    },
+    {
+      "id": 3024,
+      "chunkA": "I have lectures on Tuesday from 9",
+      "chunkB": "am until 2 pm.",
+      "isNew": false
+    },
+    {
+      "id": 3025,
+      "chunkA": "Tomorrow evening, there will be a panel",
+      "chunkB": "discussion on sustainable development.",
+      "isNew": false
+    },
+    {
+      "id": 3026,
+      "chunkA": "There is a fitness centre next",
+      "chunkB": "to the student union.",
+      "isNew": false
+    },
+    {
+      "id": 3027,
+      "chunkA": "Eating a healthy breakfast can provide",
+      "chunkB": "energy throughout the day.",
+      "isNew": false
+    },
+    {
+      "id": 3028,
+      "chunkA": "There will be an opportunity to ask questions",
+      "chunkB": "at the end of the meeting.",
+      "isNew": false
+    },
+    {
+      "id": 3029,
+      "chunkA": "There are many welcoming activities for new",
+      "chunkB": "undergraduate and postgraduate students.",
+      "isNew": false
+    },
+    {
+      "id": 3030,
+      "chunkA": "Students can choose graduate courses,",
+      "chunkB": "graduate diplomas, and master's degrees.",
+      "isNew": false
+    },
+    {
+      "id": 3031,
+      "chunkA": "Understanding the historical context will help you appreciate",
+      "chunkB": "the art in this era.",
+      "isNew": false
+    },
+    {
+      "id": 3032,
+      "chunkA": "Marks will be awarded for bibliography",
+      "chunkB": "in the correct format.",
+      "isNew": false
+    },
+    {
+      "id": 3033,
+      "chunkA": "Keeping organised class notes will make",
+      "chunkB": "study time more efficient.",
+      "isNew": false
+    },
+    {
+      "id": 3034,
+      "chunkA": "You may use your student identification card to",
+      "chunkB": "borrow books from the library.",
+      "isNew": false
+    },
+    {
+      "id": 3035,
+      "chunkA": "Would you pass me the",
+      "chunkB": "textbook on that table?",
+      "isNew": false
+    },
+    {
+      "id": 3036,
+      "chunkA": "Before you hear the rest of the talk,",
+      "chunkB": "you'll have some time to look at questions 14 to 20.",
+      "isNew": false
+    },
+    {
+      "id": 3037,
+      "chunkA": "Tuition fees will vary according to",
+      "chunkB": "the field of study.",
+      "isNew": false
+    },
+    {
+      "id": 3038,
+      "chunkA": "I think your watch is fast. You",
+      "chunkB": "need to reset it.",
+      "isNew": false
+    },
+    {
+      "id": 3039,
+      "chunkA": "Major sports on campus include rugby,",
+      "chunkB": "soccer, and tennis.",
+      "isNew": false
+    },
+    {
+      "id": 3040,
+      "chunkA": "The treasure hunters were willing to take any",
+      "chunkB": "risks to get to the location.",
+      "isNew": false
+    },
+    {
+      "id": 3041,
+      "chunkA": "To get a further extension,",
+      "chunkB": "you need to call the education executive on 401.",
+      "isNew": false
+    },
+    {
+      "id": 3042,
+      "chunkA": "The geographic assignment should be submitted by",
+      "chunkB": "the midday of Friday.",
+      "isNew": false
+    },
+    {
+      "id": 3043,
+      "chunkA": "I would like an egg and tomatoes on",
+      "chunkB": "white sandwich bread with orange juice.",
+      "isNew": false
+    },
+    {
+      "id": 3044,
+      "chunkA": "Robert Frost lived in rural",
+      "chunkB": "areas in New England.",
+      "isNew": false
+    },
+    {
+      "id": 3045,
+      "chunkA": "Ideally, free trade is beneficial for",
+      "chunkB": "trading with two partners.",
+      "isNew": false
+    },
+    {
+      "id": 3046,
+      "chunkA": "Hypothetically, insufficient mastery in these",
+      "chunkB": "areas slows future progress.",
+      "isNew": false
+    },
+    {
+      "id": 3047,
+      "chunkA": "Companies are aiming to earn money",
+      "chunkB": "not to change society.",
+      "isNew": false
+    },
+    {
+      "id": 3048,
+      "chunkA": "The hypothesis on the black hole is rendered moot",
+      "chunkB": "as the explanation for the explosion.",
+      "isNew": false
+    },
+    {
+      "id": 3049,
+      "chunkA": "Anatomy is the study of internal",
+      "chunkB": "and external body structures.",
+      "isNew": false
+    },
+    {
+      "id": 3050,
+      "chunkA": "I would like tomatoes and cheese sandwiches on",
+      "chunkB": "white bread and orange juice.",
+      "isNew": false
+    },
+    {
+      "id": 3051,
+      "chunkA": "The United Kingdom is a constitutional",
+      "chunkB": "monarchy and parliamentary democracy.",
+      "isNew": false
+    },
+    {
+      "id": 3052,
+      "chunkA": "The office opens on Mondays and Thursdays directly",
+      "chunkB": "following the freshman induction seminar.",
+      "isNew": false
+    },
+    {
+      "id": 3053,
+      "chunkA": "All undergraduate students should participate",
+      "chunkB": "in the seminar.",
+      "isNew": false
+    },
+    {
+      "id": 3054,
+      "chunkA": "Our class is divided into two groups. You come with me,",
+      "chunkB": "and the others just stay here.",
+      "isNew": false
+    },
+    {
+      "id": 3055,
+      "chunkA": "It is argued that students can learn more",
+      "chunkB": "in collaborative rather than individual tasks.",
+      "isNew": false
+    },
+    {
+      "id": 3056,
+      "chunkA": "Our capacity to respond to national needs will",
+      "chunkB": "determine our ability to flourish.",
+      "isNew": false
+    },
+    {
+      "id": 3057,
+      "chunkA": "The lecture theatre one is located on the",
+      "chunkB": "ground floor of the Pack Building.",
+      "isNew": false
+    },
+    {
+      "id": 3058,
+      "chunkA": "Critical literature theory broadens interpretation.",
+      "chunkB": "",
+      "isNew": false
+    },
+    {
+      "id": 3059,
+      "chunkA": "Nearly half of the television outputs are",
+      "chunkB": "given away for educational programs.",
+      "isNew": false
+    },
+    {
+      "id": 3060,
+      "chunkA": "Is the hypothesis on black hole rendered moot",
+      "chunkB": "as an explanation of the explosion?",
+      "isNew": false
+    },
+    {
+      "id": 3061,
+      "chunkA": "Arteries carry blood from the heart to",
+      "chunkB": "other parts of the body.",
+      "isNew": false
+    },
+    {
+      "id": 3062,
+      "chunkA": "Currents work in the same way; long thin wires have",
+      "chunkB": "more resistance than do short thick wires.",
+      "isNew": false
+    },
+    {
+      "id": 3063,
+      "chunkA": "The weather here is unpredictable.",
+      "chunkB": "",
+      "isNew": false
+    },
+    {
+      "id": 3064,
+      "chunkA": "There are many theories linking",
+      "chunkB": "this to global warming.",
+      "isNew": false
+    },
+    {
+      "id": 3065,
+      "chunkA": "The facts you have garnered with such infinite trouble",
+      "chunkB": "invariably fail you in a pinch.",
+      "isNew": false
+    },
+    {
+      "id": 3066,
+      "chunkA": "All students are required to submit a",
+      "chunkB": "summary of their findings tomorrow.",
+      "isNew": false
+    },
+    {
+      "id": 3067,
+      "chunkA": "The key to effective study",
+      "chunkB": "is being organised.",
+      "isNew": false
+    },
+    {
+      "id": 3068,
+      "chunkA": "The library will be closed for 3 days",
+      "chunkB": "over the bank holiday weekend.",
+      "isNew": false
+    },
+    {
+      "id": 3069,
+      "chunkA": "All essays and seminar papers submitted must",
+      "chunkB": "be emailed to your tutor.",
+      "isNew": false
+    },
+    {
+      "id": 3070,
+      "chunkA": "Animals grow larger and stronger",
+      "chunkB": "to hunt better.",
+      "isNew": false
+    },
+    {
+      "id": 3071,
+      "chunkA": "As a student union member,",
+      "chunkB": "we can influence the change of the university.",
+      "isNew": false
+    },
+    {
+      "id": 3072,
+      "chunkA": "If you want to sell your book,",
+      "chunkB": "it must have a list of bibliography.",
+      "isNew": false
+    },
+    {
+      "id": 3073,
+      "chunkA": "This small Indian state is a land of",
+      "chunkB": "forest valleys and snowy islands.",
+      "isNew": false
+    },
+    {
+      "id": 3074,
+      "chunkA": "It's within the framework that we",
+      "chunkB": "are making our survey.",
+      "isNew": false
+    },
+    {
+      "id": 3075,
+      "chunkA": "We didn't have any noticeable variance between",
+      "chunkB": "the two or three tasks.",
+      "isNew": false
+    },
+    {
+      "id": 3076,
+      "chunkA": "Would you pass the material",
+      "chunkB": "textbook on the table?",
+      "isNew": false
+    },
+    {
+      "id": 3077,
+      "chunkA": "You can download all lecture handouts",
+      "chunkB": "from the course website.",
+      "isNew": false
+    },
+    {
+      "id": 3078,
+      "chunkA": "You can pay using cash",
+      "chunkB": "or a credit card.",
+      "isNew": false
+    },
+    {
+      "id": 3079,
+      "chunkA": "Hypothetically, insufficient mastery in these",
+      "chunkB": "areas slows future progress.",
+      "isNew": false
+    },
+    {
+      "id": 3080,
+      "chunkA": "Our university has strong partnerships with the industry as",
+      "chunkB": "well as collaborative relationships with government.",
+      "isNew": false
+    },
+    {
+      "id": 3081,
+      "chunkA": "I don't agree with the author's point of view,",
+      "chunkB": "but his presentation is good.",
+      "isNew": false
+    },
+    {
+      "id": 3082,
+      "chunkA": "Don't hesitate to email me if",
+      "chunkB": "you have any questions.",
+      "isNew": false
+    },
+    {
+      "id": 3083,
+      "chunkA": "I am glad that",
+      "chunkB": "you've got it.",
+      "isNew": false
+    },
+    {
+      "id": 3084,
+      "chunkA": "The office opens on",
+      "chunkB": "Wednesday and Thursday.",
+      "isNew": false
+    },
+    {
+      "id": 3085,
+      "chunkA": "The contest includes both the land living",
+      "chunkB": "history and human history.",
+      "isNew": false
+    },
+    {
+      "id": 3086,
+      "chunkA": "What distinguishes him from others is his dramatic",
+      "chunkB": "use of black and white photography.",
+      "isNew": false
+    },
+    {
+      "id": 3087,
+      "chunkA": "The US ranks the 22nd in foreign aid,",
+      "chunkB": "given as a percentage of GDP.",
+      "isNew": false
+    },
+    {
+      "id": 3088,
+      "chunkA": "Please pass the handouts along to the rest",
+      "chunkB": "of the people in your row.",
+      "isNew": false
+    },
+    {
+      "id": 3089,
+      "chunkA": "The tanker is registered in Rotterdam.",
+      "chunkB": "",
+      "isNew": false
+    },
+    {
+      "id": 3090,
+      "chunkA": "I'm glad you got here safely.",
+      "chunkB": "",
+      "isNew": false
+    },
+    {
+      "id": 3091,
+      "chunkA": "The office opens on",
+      "chunkB": "Mondays and Thursdays.",
+      "isNew": false
+    },
+    {
+      "id": 3092,
+      "chunkA": "39.5% of California residents speak a language",
+      "chunkB": "other than English at home.",
+      "isNew": false
+    },
+    {
+      "id": 3093,
+      "chunkA": "Meteorology is a subject",
+      "chunkB": "of Earth's atmosphere.",
+      "isNew": false
+    },
+    {
+      "id": 3094,
+      "chunkA": "In this library, reserved collection books can be",
+      "chunkB": "borrowed for up to 3 hours.",
+      "isNew": false
+    },
+    {
+      "id": 3095,
+      "chunkA": "The seminar on writing skills",
+      "chunkB": "has been cancelled.",
+      "isNew": false
+    },
+    {
+      "id": 3096,
+      "chunkA": "Would you pass me the book",
+      "chunkB": "on the lefthand side?",
+      "isNew": false
+    },
+    {
+      "id": 3097,
+      "chunkA": "We will discuss these 2 pictures",
+      "chunkB": "in the next lecture.",
+      "isNew": false
+    },
+    {
+      "id": 3098,
+      "chunkA": "We provide a wide range of courses",
+      "chunkB": "to undergraduate and postgraduate students.",
+      "isNew": false
+    },
+    {
+      "id": 3099,
+      "chunkA": "We must put great care",
+      "chunkB": "when analyzing data.",
+      "isNew": false
+    },
+    {
+      "id": 3100,
+      "chunkA": "We divide our class into two groups. You come with me,",
+      "chunkB": "the rest should stay here.",
+      "isNew": false
+    },
+    {
+      "id": 3101,
+      "chunkA": "We are not going to accept the assignment",
+      "chunkB": "after the due day on Friday.",
+      "isNew": false
+    },
+    {
+      "id": 3102,
+      "chunkA": "This lecture was meant to",
+      "chunkB": "start at 10.",
+      "isNew": false
+    },
+    {
+      "id": 3103,
+      "chunkA": "There will be an open book exam on Monday,",
+      "chunkB": "the 28th.",
+      "isNew": false
+    },
+    {
+      "id": 3104,
+      "chunkA": "There will be a guest lecturer visiting",
+      "chunkB": "the department next month.",
+      "isNew": false
+    },
+    {
+      "id": 3105,
+      "chunkA": "The visiting professor is going to give",
+      "chunkB": "a lecture on geology.",
+      "isNew": false
+    },
+    {
+      "id": 3106,
+      "chunkA": "The topic next week on our column",
+      "chunkB": "will be The Nuclear Disarmament.",
+      "isNew": false
+    },
+    {
+      "id": 3107,
+      "chunkA": "Fees, results, and schedules will be available",
+      "chunkB": "online on the university website.",
+      "isNew": false
+    },
+    {
+      "id": 3108,
+      "chunkA": "Newspapers around the world are",
+      "chunkB": "reporting stories of presidents.",
+      "isNew": false
+    },
+    {
+      "id": 3109,
+      "chunkA": "There is a pharmacy on",
+      "chunkB": "campus near the store.",
+      "isNew": false
+    },
+    {
+      "id": 3110,
+      "chunkA": "I can't attend the lecture because I",
+      "chunkB": "have a doctor's appointment.",
+      "isNew": false
+    },
+    {
+      "id": 3111,
+      "chunkA": "Globalisation has been an overwhelmingly",
+      "chunkB": "urban and urbanisation phenomenon.",
+      "isNew": false
+    },
+    {
+      "id": 3112,
+      "chunkA": "He was constantly looking for ways to",
+      "chunkB": "bring industry and agriculture together.",
+      "isNew": false
+    },
+    {
+      "id": 3113,
+      "chunkA": "By clicking this button,",
+      "chunkB": "you agree with the terms and conditions of this website.",
+      "isNew": false
+    },
+    {
+      "id": 3114,
+      "chunkA": "If you want to receive the reimbursement,",
+      "chunkB": "you must submit the original receipts.",
+      "isNew": false
+    },
+    {
+      "id": 3115,
+      "chunkA": "Unfortunately, the 2 most interesting economic electives",
+      "chunkB": "clash with my timetable.",
+      "isNew": false
+    },
+    {
+      "id": 3116,
+      "chunkA": "To improve the essay,",
+      "chunkB": "I decided to include more direct quotes.",
+      "isNew": false
+    },
+    {
+      "id": 3117,
+      "chunkA": "This part of the session is",
+      "chunkB": "not supported by documentation.",
+      "isNew": false
+    },
+    {
+      "id": 3118,
+      "chunkA": "The part of the story is the",
+      "chunkB": "story of my father.",
+      "isNew": false
+    },
+    {
+      "id": 3119,
+      "chunkA": "The original Olympic Games were",
+      "chunkB": "celebrated as religious festivals.",
+      "isNew": false
+    },
+    {
+      "id": 3120,
+      "chunkA": "The original Olympic game is one",
+      "chunkB": "kind of original festival.",
+      "isNew": false
+    }
+  ],
+  "ra": [
+    {
+      "id": 4001,
+      "title": "Statistics",
+      "plainText": "Statistics are indicators of change and allow meaningful comparisons to be made. While it may be the issues rather than the statistics as such that grab people's attention, it should be recognised that it is the statistics that informed the issues. Statistical literacy, then, is the ability to accurately understand, interpret and evaluate the data that inform these issues.",
+      "markedText": "Statistics are indicators of change and allow meaningful comparisons to be made. / / While it may be the issues rather than the statistics as such / that grab people's attention, / it should be recognised / that it is the statistics / that informed the issues. / Statistical literacy, / then, / is the ability to accurately understand, / interpret and evaluate the data / that inform these issues.",
+      "isNew": true
+    },
+    {
+      "id": 4002,
+      "title": "Tutor",
+      "plainText": "Your tutor helps you make the most of your time at university by giving you guidance and support along the way. All new students are allocated a personal tutor who will encourage you to get the most out of your course, direct you to other sources of support and help you achieve your goals.",
+      "markedText": "Your tutor helps you make the most of your time at university by giving you guidance and support along the way. / All new students are allocated a personal tutor who will encourage you to get the most out of your course, / direct you to other sources of support and help you achieve your goals.",
+      "isNew": true
+    },
+    {
+      "id": 4003,
+      "title": "William Shakespeare",
+      "plainText": "380 years after his death, William Shakespeare remains the central author of the English speaking world; he is the most quoted poet and the most regularly produced playwright and now among the most popular screenwriters as well. Why is that, and who \"is\" he? Why do so many people think his writing is so great? What meanings did his plays have in his own time, and how do we read, speak, or listen to his words now?",
+      "markedText": "380 years after his death, / William Shakespeare remains the central author of the English speaking world; / he is the most quoted poet and the most regularly produced playwright and now among the most popular screenwriters as well. / Why is that, / and who \"is\" he? Why do so many people think his writing is so great? What meanings did his plays have in his own time, / and how do we read, / speak, / or listen to his words now?",
+      "isNew": true
+    },
+    {
+      "id": 4004,
+      "title": "Volcano Behaviours",
+      "plainText": "There were various explanations for volcano behaviour before the structure of the earth's mantle as a semisolid material was developed. For decades, awareness that compression and radioactive materials may be heat sources was discounted and volcanic action was often attributed to chemical reactions and a thin layer of molten rock near the surface.",
+      "markedText": "There were various explanations for volcano behaviour before the structure of the earth's mantle as a semisolid material was developed. / For decades, / awareness / that compression and radioactive materials may be heat sources was discounted and volcanic action was often attributed to chemical reactions and a thin layer of molten rock near the surface.",
+      "isNew": true
+    },
+    {
+      "id": 4005,
+      "title": "Baby Hearing",
+      "plainText": "Most babies start developing their hearing while still in the womb, prompting some hopeful parents to play classical music to their pregnant bellies. Some research even suggests that infants are listening to adult speech as early as 10 weeks before birth, gathering the basic building blocks of their family's native tongue.",
+      "markedText": "Most babies start developing their hearing / while still in the womb, / prompting some hopeful parents to play classical music to their pregnant bellies. / Some research even suggests / that infants are listening to adult speech as early as 10 weeks before birth, / gathering the basic building blocks of their family's native tongue.",
+      "isNew": true
+    },
+    {
+      "id": 4006,
+      "title": "Flood Control",
+      "plainText": "We have spent a lot of money over the last 70 years on flood control, and it's protected millions of people and has saved us billions of dollars. We've built dams to hold back the waters. We've built levees to keep the water off the people, and we've raised the ones that were originally started in 1718.",
+      "markedText": "We have spent a lot of money over the last 70 years on flood control, / and it's protected millions of people and has saved us billions of dollars. / We've built dams to hold back the waters. / We've built levees to keep the water off the people, / and we've raised the ones / that were originally started in 1718.",
+      "isNew": true
+    },
+    {
+      "id": 4007,
+      "title": "Canada",
+      "plainText": "With a population of only just over 30 million living in the world's second largest country, Canada is justly renowned for vast tracts of wilderness untroubled by pollution either from industry or from intensive farming methods. A major conservation issue is the battle to stop the logging of virgin forest in northern Ontario and on the west coast.",
+      "markedText": "With a population of only just over 30 million living in the world's second largest country, / Canada is justly renowned for vast tracts of wilderness untroubled by pollution either from industry or from intensive farming methods. / A major conservation issue is the battle to stop the logging of virgin forest in northern Ontario and on the west coast.",
+      "isNew": false
+    },
+    {
+      "id": 4008,
+      "title": "Selective History",
+      "plainText": "History is selective. What history books tell us about the past is not everything that happened, but what historians have selected. They cannot put in everything: choices have to be made. Choices must similarly be made about which aspects of the past should be formally taught to the next generation in the shape of school history lessons.",
+      "markedText": "History is selective. / What history books tell us about the past is not everything / that happened, / but what historians have selected. / They cannot put in everything: / choices have to be made. / Choices must similarly be made about / which aspects of the past should be formally taught to the next generation in the shape of school history lessons.",
+      "isNew": false
+    },
+    {
+      "id": 4009,
+      "title": "Water",
+      "plainText": "Using an X -ray laser, a research team has investigated how water heats up under extreme conditions. In the process, the scientists were able to observe water that remained liquid even at temperatures of more than 170 degrees Celsius. The investigation revealed an anomalous dynamic behaviour of water, which is of fundamental importance for investigations of sensitive samples using X -ray lasers.",
+      "markedText": "Using an X -ray laser, / a research team has investigated how water heats up under extreme conditions. / In the process, / the scientists were able to observe water / that remained liquid even at temperatures of more than 170 degrees Celsius. / The investigation revealed an anomalous dynamic behaviour of water, / / which is of fundamental importance for investigations of sensitive samples using X -ray lasers.",
+      "isNew": false
+    },
+    {
+      "id": 4010,
+      "title": "The Royal Institution",
+      "plainText": "The Royal Institution is an organisation that has been around for 209 years. Many of the people that have worked here have been scientists themselves, including Michael Faraday. He made the discoveries that may be generating a using electricity much easier, making it possible for us all to switch on lights, cook for dinner, play games consoles much more.",
+      "markedText": "The Royal Institution is an organisation / that has been around for 209 years. / Many of the people / that have worked here have been scientists themselves, / including Michael Faraday. / He made the discoveries / that may be generating a using electricity much easier, / making it possible for us all to switch on lights, / cook for dinner, / play games consoles much more.",
+      "isNew": false
+    },
+    {
+      "id": 4011,
+      "title": "Telecommunication",
+      "plainText": "Today, telecommunication is widespread and devices that assist the progress are common in many parts of the world. There is also a vast array of networks that connect these devices, including a computer, telephone, and cable networks. Computer communication across the Internet, such as email and instant messaging, is just one of many examples of telecommunication.",
+      "markedText": "Today, / telecommunication is widespread and devices / that assist the progress are common in many parts of the world. / There is also a vast array of networks / that connect these devices, / including a computer, / telephone, / and cable networks. / Computer communication across the Internet, / such as email and instant messaging, / is just one of many examples of telecommunication.",
+      "isNew": false
+    },
+    {
+      "id": 4012,
+      "title": "Quality of Life",
+      "plainText": "In spite of the spectacularly high quality of life for the vast majority of the people who live in the European Union, its inhabitant seems obsessed by the region's relative decline in the world. Slow economic growth rates and high unemployment have reinforced the impression that Europe is unhappy with today and unsure of tomorrow.",
+      "markedText": "In spite of the spectacularly high quality of life for the vast majority of the people who live in the European Union, / its inhabitant seems obsessed by the region's relative decline in the world. / Slow economic growth rates and high unemployment have reinforced the impression / that Europe is unhappy with today and unsure of tomorrow.",
+      "isNew": false
+    },
+    {
+      "id": 4013,
+      "title": "World Without Light",
+      "plainText": "Have you ever pictured a world without light? Just think how much we rely on man made light sources in our life. Without engineers, we wouldn't be able to live the way we do. No street lights, no TV , no computer displays, no house lights engineers design and build all these things.",
+      "markedText": "Have you ever pictured a world without light? Just think how much we rely on man made light sources in our life. / Without engineers, / we wouldn't be able to live the way we do. / No street lights, / no TV , / no computer displays, / no house lights engineers design and build all these things.",
+      "isNew": false
+    },
+    {
+      "id": 4014,
+      "title": "Lincoln",
+      "plainText": "Lincoln's apparently radical change of mind about his war power to emancipate slaves was caused by the escalating scope of the war, which convinced him that any measure to weaken the Confederacy and strengthen the Union war effort was justifiable as a military necessity.",
+      "markedText": "Lincoln's apparently radical change of mind about his war power to emancipate slaves was caused by the escalating scope of the war, / / which convinced him / that any measure to weaken the Confederacy and strengthen the Union war effort was justifiable as a military necessity.",
+      "isNew": false
+    },
+    {
+      "id": 4015,
+      "title": "Black Swan",
+      "plainText": "Before the discovery of Australia, people in the old world were convinced that all swans were white, an unassailable belief as it seemed completely confirmed by empirical evidence. The sighting of the first black swan might have been an interesting surprise for a few ornithologists, but that is not where the significance of the story lies.",
+      "markedText": "Before the discovery of Australia, / people in the old world were convinced / that all swans were white, / an unassailable belief as it seemed completely confirmed by empirical evidence. / The sighting of the first black swan might have been an interesting surprise for a few ornithologists, / but / that is not / where the significance of the story lies.",
+      "isNew": false
+    },
+    {
+      "id": 4016,
+      "title": "Teenage Girls",
+      "plainText": "Teenage girls are continuing to outperform boys in English while the gender gap in achievements in math and science has almost disappeared. The figures show that last year 80% of 14 year old girls reached at least the expected level 5 in English, compared with 65% of boys. But in math, the girls are just 1% ahead of boys, while in science the difference is 2%.",
+      "markedText": "Teenage girls are continuing to outperform boys in English / while the gender gap in achievements in math and science has almost disappeared. / The figures show / that last year 80% of 14 year old girls reached at least the expected level 5 in English, / compared with 65% of boys. / But in math, / the girls are just 1% ahead of boys, / / while in science the difference is 2%.",
+      "isNew": false
+    },
+    {
+      "id": 4017,
+      "title": "Succulent Plants",
+      "plainText": "Most succulent plants are found in regions where there is little rainfall, dry air, plenty of sunshine, porous soils and high temperatures during part of the year. These conditions have caused changes in plant structures, which have resulted in greatly increased thickness of stems, leaves and sometimes roots, enabling them to store moisture from the infrequent rains.",
+      "markedText": "Most succulent plants are found in regions / where there is little rainfall, / dry air, / plenty of sunshine, / porous soils and high temperatures during part of the year. / These conditions have caused changes in plant structures, / / which have resulted in greatly increased thickness of stems, / leaves and sometimes roots, / enabling them to store moisture from the infrequent rains.",
+      "isNew": false
+    },
+    {
+      "id": 4018,
+      "title": "Economic Planning",
+      "plainText": "Another method governments use to try and influence the private sector is economic planning. For a long time now, socialist and communist states have used planning as an alternative to the price mechanism, organizing production and distributing their resources according to social and strategic needs, rather than based on purely economic considerations.",
+      "markedText": "Another method governments use to try and influence the private sector is economic planning. / For a long time now, / socialist and communist states have used planning as an alternative to the price mechanism, / organizing production and distributing their resources according to social and strategic needs, / rather than based on purely economic considerations.",
+      "isNew": false
+    },
+    {
+      "id": 4019,
+      "title": "The Ritual",
+      "plainText": "The ritual of the state opening of parliament still illustrates the basis of the British constitution. The sovereignty of the Royal Family has passed to the sovereignty of parliament, leaving the monarchy with the trappings of power, while prime ministers are still denied the kind of status that is given to American and French presidents.",
+      "markedText": "The ritual of the state opening of parliament still illustrates the basis of the British constitution. / The sovereignty of the Royal Family has passed to the sovereignty of parliament, / leaving the monarchy with the trappings of power, / / while prime ministers are still denied the kind of status / that is given to American and French presidents.",
+      "isNew": false
+    },
+    {
+      "id": 4020,
+      "title": "Letter Writing",
+      "plainText": "While far fewer people these days write letters and therefore have less use for stamps, there are still a few categories of stamps which attract collectors. Stamps in common use for an indefinite period until the price goes up are called \"definitive\" issues, while a more collectible type of stamp is the \"commemorative\" issue, honoring people, events, and anniversaries.",
+      "markedText": "While far fewer people these days write letters / and therefore have less use for stamps, / there are still a few categories of stamps / which attract collectors. / Stamps in common use for an indefinite period until the price goes up are called \"definitive\" issues, / / while a more collectible type of stamp is the \"commemorative\" issue, / honoring people, / events, / and anniversaries.",
+      "isNew": false
+    },
+    {
+      "id": 4021,
+      "title": "Alexander The Great",
+      "plainText": "Before the time of Alexander the Great, the only eastern people who could be compared with the Greeks in the fields of science and philosophy were from the Indian sub continent. However, because so little is known about Indian chronology, it is difficult to tell how much of their science was original and how much was the result of Greek influence.",
+      "markedText": "Before the time of Alexander the Great, / the only eastern people who could be compared with the Greeks in the fields of science and philosophy were from the Indian sub continent. / However, / / because so little is known about Indian chronology, / it is difficult to tell how much of their science was original and how much was the result of Greek influence.",
+      "isNew": false
+    },
+    {
+      "id": 4022,
+      "title": "Labour Migration",
+      "plainText": "Most countries are affected by labour migration. In many rural places, the traditional extended family has been undermined by the need for family members to migrate to towns as an economic necessity. Migration, therefore, presents a major challenge everywhere to social and economic policy.",
+      "markedText": "Most countries are affected by labour migration. / In many rural places, / the traditional extended family has been undermined by the need for family members to migrate to towns as an economic necessity. / Migration, / therefore, / presents a major challenge everywhere to social and economic policy.",
+      "isNew": false
+    },
+    {
+      "id": 4023,
+      "title": "Statistics Reflect",
+      "plainText": "Statistics reflect vital information about the economy, the well being of the population, and the environment. Society relies on statistics being visible, accessible and robust, and on statistically literate people making the best use of the information to determine future action. Statistical literacy, then, is the ability to accurately understand, interpret and evaluate the data that inform these issues.",
+      "markedText": "Statistics reflect vital information about the economy, / the well being of the population, / and the environment. / Society relies on statistics being visible, / accessible and robust, / and on statistically literate people making the best use of the information to determine future action. / Statistical literacy, / then, / is the ability to accurately understand, / interpret and evaluate the data / that inform these issues.",
+      "isNew": false
+    },
+    {
+      "id": 4024,
+      "title": "The United States",
+      "plainText": "The United States is at a peak in the world's market for motor cars and trucks. An agent for the U.S. Bureau of Foreign and Domestic Commerce reports a prosperous condition of affairs prevailing in Japan, which is buying more automobiles, especially large cars, than ever before.",
+      "markedText": "The United States is at a peak in the world's market for motor cars and trucks. / An agent for the U.S. / Bureau of Foreign and Domestic Commerce reports a prosperous condition of affairs prevailing in Japan, / / which is buying more automobiles, / especially large cars, / than ever before.",
+      "isNew": false
+    },
+    {
+      "id": 4025,
+      "title": "The Asteroid",
+      "plainText": "The asteroid that slammed into the moon 3.8 billion years ago creating the Imbrium Basin may have had a diameter of at least 150 miles, according to a new estimate. The work helps explain puzzling geological features on the moon's near side and has implications for understanding the evolution of the early solar system.",
+      "markedText": "The asteroid / that slammed into the moon 3.8 billion years ago creating the Imbrium Basin may have had a diameter of at least 150 miles, / according to a new estimate. / The work helps explain puzzling geological features on the moon's near side and has implications for understanding the evolution of the early solar system.",
+      "isNew": false
+    },
+    {
+      "id": 4026,
+      "title": "Fake News",
+      "plainText": "Fake news can distort people's beliefs even after being debunked. For example, repeated over and over, a story such as the one about the Pope Endorsing Trump can create a glow around a political candidate that persists long after the story is exposed as a fake. A study recently published in the journal Intelligence suggests that some people may have an especially difficult time rejecting misinformation.",
+      "markedText": "Fake news can distort people's beliefs even after being debunked. / For example, / repeated over and over, / a story such as the one about the Pope Endorsing Trump can create a glow around a political candidate / that persists long after the story is exposed as a fake. / A study recently published in the journal Intelligence suggests / that some people may have an especially difficult time rejecting misinformation.",
+      "isNew": false
+    },
+    {
+      "id": 4027,
+      "title": "Vanilla",
+      "plainText": "The uniquely scented flavour of vanilla is second only to chocolate in popularity on the world's palate. It's also the second most expensive spice after saffron. But highly labour intensive cultivation methods and the plant's temperamental life cycle and propagation mean production on a global scale is struggling to keep up with the increasing demand for the product.",
+      "markedText": "The uniquely scented flavour of vanilla is second only to chocolate in popularity on the world's palate. / It's also the second most expensive spice after saffron. / But highly labour intensive cultivation methods and the plant's temperamental life cycle and propagation mean production on a global scale is struggling to keep up with the increasing demand for the product.",
+      "isNew": false
+    },
+    {
+      "id": 4028,
+      "title": "Tourism",
+      "plainText": "Tourism is a challenging sector on which divides statistics since businesses serving tourists, also service local people. Therefore, it is not straightforward to estimate how much business sectors' revenues and how many jobs are due to tourist expenditures.",
+      "markedText": "Tourism is a challenging sector on / which divides statistics since businesses serving tourists, / also service local people. / Therefore, / it is not straightforward to estimate how much business sectors' revenues and how many jobs are due to tourist expenditures.",
+      "isNew": false
+    },
+    {
+      "id": 4029,
+      "title": "Business School",
+      "plainText": "Business school admissions officers said the new drive to attract younger students was in part the result of a realization that they had inadvertently limited their applicant pool by requiring several years' work experience. Talented students who might otherwise have gone to business school instead opted for a law or policy degree because they were intimidated by the expectation of work experience.",
+      "markedText": "Business school admissions officers said the new drive to attract younger students was in part the result of a realization / that they had inadvertently limited their applicant pool by requiring several years' work experience. / Talented students who might otherwise have gone to business school instead opted for a law or policy degree / because they were intimidated by the expectation of work experience.",
+      "isNew": false
+    },
+    {
+      "id": 4030,
+      "title": "Elephant",
+      "plainText": "The elephant is the largest living land mammal. During evolution, its skeleton has greatly altered from the usual mammal, design for two main reasons. One is to cope with the great weight of huge grinding cheek teeth and elongated tusk teeth, making the skull particularly massive. The other is to support the enormous bulk of such a huge body.",
+      "markedText": "The elephant is the largest living land mammal. / During evolution, / its skeleton has greatly altered from the usual mammal, / design for two main reasons. / One is to cope with the great weight of huge grinding cheek teeth and elongated tusk teeth, / making the skull particularly massive. / The other is to support the enormous bulk of such a huge body.",
+      "isNew": false
+    }
+  ],
+  "swt": [
+    {
+      "id": "swt-live-1",
+      "type": "SWT",
+      "title": "Power of Mindfulness",
+      "sourceText": "Mindfulness, the practice of being fully present and engaged in the moment, has gained significant traction in the field of psychology as a powerful tool for enhancing mental health. Rooted in ancient meditation practices, mindfulness involves a non-judgmental awareness of one's thoughts, feelings, bodily sensations, and surrounding environment. Research in psychology and neuroscience has shown that mindfulness can have a profound impact on mental well-being. Regular mindfulness practice has been associated with reductions in symptoms of anxiety and depression. It helps individuals break free from negative thought patterns, reducing the rumination and worry that often accompany these conditions. Mindfulness also plays a crucial role in stress reduction. By fostering a calm and attentive state of mind, mindfulness practices like meditation can lower stress hormones and promote relaxation. This state of mental calmness can improve sleep quality, enhance concentration, and boost overall emotional resilience. In therapy, mindfulness-based interventions such as Mindfulness-Based Stress Reduction (MBSR) and Mindfulness-Based Cognitive Therapy (MBCT) have been effective in treating various mental health issues. These therapeutic approaches combine mindfulness techniques with elements of cognitive therapy to help individuals understand and manage their thoughts and emotions more effectively. Furthermore, mindfulness can improve physical health, which is closely linked to mental health. Studies have shown that it can lower blood pressure, reduce chronic pain, and improve the immune system, further contributing to mental and emotional well-being. In conclusion, mindfulness offers a versatile and accessible approach to mental health, suitable for a wide range of individuals. Its benefits of reducing anxiety, depression, and stress, and enhancing overall well-being, make it an invaluable practice in the journey towards mental and emotional health.",
+      "keywords": [
+        "mindfulness",
+        "mental",
+        "health",
+        "stress",
+        "practice",
+        "individuals"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "swt-live-2",
+      "type": "SWT",
+      "title": "Preschool Program",
+      "sourceText": "A recent policy proposal suggests reducing funding for preschool education programs. Proponents of the proposal argue that reallocating these funds to other educational sectors could yield better long-term benefits. They believe that addressing issues like classroom overcrowding and teacher shortages in these sectors is more pressing. Additionally, some proponents argue that parents should take more responsibility for early childhood education rather than relying on government-funded programs. On the other hand, critics of the proposal emphasize the crucial role of early childhood education in laying the foundation for future academic and social success. Numerous studies have shown that children who attend high-quality preschool programs are more likely to perform better in school, graduate from high school, and have higher earning potential as adults. Critics also point out that cutting funding for preschool programs could disproportionately affect low-income families who rely on these services for affordable early childhood education. This reduction in funding could exacerbate existing inequalities in the education system. Furthermore, early childhood education programs provide essential support for working parents, enabling them to maintain stable employment while ensuring their children receive proper care and learning opportunities. The debate continues, with strong opinions on both sides regarding the best allocation of limited educational resources. Ultimately, the question remains whether the benefits of reallocating funds outweigh the potential long-term consequences of reducing support for early childhood education.",
+      "keywords": [
+        "education",
+        "programs",
+        "childhood",
+        "proposal",
+        "funding",
+        "preschool"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "swt-live-3",
+      "type": "SWT",
+      "title": "Triangulation",
+      "sourceText": "While multi-method research is experiencing a surge in popularity, there are reasons to worry about whether multi-method applications are producing more grounded, justified, and persuasive inferences than single- method studies. These concerns arise from the 'triangulation' framework, a prototypical research design in multi-method social science. Simply put, triangulation designs involve asking the same causal inference question using two different methods, checking the same substantive conclusions. The metaphor is the geometric technique of estimating distance by measuring the angle of sight toward an object from two different vantage points. Triangulation in social sciences has major flaws. One is well-known and widely discussed: what conclusion should be drawn when the two methods produce different findings? Unfortunately, the list of intellectually plausible responses to such an outcome is all but unbounded. For example, a scholar could reasonably conclude that both findings are correct but capture different aspects of the phenomenon of interest; that one method or the other displayed fundamental limitations in the analysis; that the divergence provides evidence against the credibility of the assumptions involved in both methods; that the outcome involves a contrast in terms of scope or relevant populations for the two methods; or that the failure to triangulate simply leaves the inference in a state of uncertainty. In decades of writing about triangulation, no definitive guidance has yet emerged about how to respond to divergent findings between the multiple methods in a study.",
+      "keywords": [
+        "method",
+        "methods",
+        "triangulation",
+        "different",
+        "findings",
+        "research"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "swt-live-4",
+      "type": "SWT",
+      "title": "Origin of Species",
+      "sourceText": "In 1837, at the age of 28, Darwin wrote \"Species Change\" in one of his notebooks, which was the earliest record of his evolutionary ideas. Prior to this, he had sailed around the world for 5 years on the HMS Beagle, observing numerous signs that species were not fixed in South America, Oceania, and other places. After returning to England, he wrote \"cuidado\" (meaning \"be careful\" in Spanish) in another notebook, realizing that the theory of evolution was a radical and dangerous view, and that there was insufficient evidence to make it public at that time. Over the next 20 years, Darwin continuously accumulated a vast amount of data and first presented his views to a small circle of scientists. It was not until 1859, when \"On the Origin of Species\" was published, that his ideas became accessible to the general readership, causing a great sensation. The first edition of 1,250 copies sold out on the day of publication, and the circulation reached 4,250 copies within a year, receiving both praise from the scientific community and fierce criticism from the religious community and conservative forces. To this day, \"On the Origin of Species\" remains one of the most important works in human history, and one of the few works that still has scientific value more than 150 years after its publication. Darwin was well aware that his work was only the beginning. He wrote in the book: \"In the distant future, I see open fields for far more important research.\"",
+      "keywords": [
+        "species",
+        "darwin",
+        "origin",
+        "copies",
+        "publication",
+        "scientific"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "swt-live-5",
+      "type": "SWT",
+      "title": "Pre-service teachers",
+      "sourceText": "Each individual content-area course has a separate syllabus that highlights the specific technologies and pedagogy that are relevant to the content area. The technology was selected after numerous meetings between methods and technology course instructors. After identifying the most appropriate technology, the methods and technology course instructors co-develop their syllabi with projects that span the two courses. Therefore, students learn about a specific technology on the technology course and they integrate it into their practice teaching experiences within their methods course. In a research collaboration with a methods area faculty member, the technology course instructor found that although pre-service teachers may know how to operate the technology, they do not know how to integrate it effectively within their daily lesson plans, mainly citing that they were not able to envision the type of projects their students could develop. These findings influenced the technology course instructor to develop exemplary models of technology projects and pedagogy for each of the technology course sections (i.e., content areas). For example, an Inspiration TM project was modeled that illustrated how students could construct an understanding of clouds using concept mapping within a science cohort. This project was supplemented by the instructor modeling effective teaching practices using concept mapping in the science classroom. The goal was to move the pre-service teachers from focusing not only on the development of a final technology project on the course, but by encouraging them to think about successful integration in their future classrooms. These examples were placed online so the pre-service teachers had access to them at all times in the development of their own projects for the technology course.",
+      "keywords": [
+        "technology",
+        "course",
+        "methods",
+        "projects",
+        "content",
+        "develop"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "swt-live-6",
+      "type": "SWT",
+      "title": "Wright Brothers",
+      "sourceText": "In 1892, the brothers opened a bicycle sales and repair shop, and they began to build bicycles on a small scale in 1896. They developed their own self-oiling bicycle wheel hub and installed a number of light machine tools in the shop. Profits from the print shop and the bicycle operation were eventually to fund the Wright brothers' aeronautical experiments from 1899 to 1905. In addition, the experience of designing and building lightweight, precision machines of wood, wire, and metal tubing was ideal preparation for the construction of flying machines. In later years, the Wrights dated their fascination with flight to a small helicopter toy that their father had brought home from his travels when the family was living in Iowa. A decade later, they had read accounts of the work of the German glider pioneer Otto Lilienthal. But it was news reports of Lilienthal's death in a glider crash in August 1896 that marked the beginning of their serious interest in flight. By 1899, the brothers had exhausted the resources of the local library and had written to the Smithsonian Institution for suggestions as to further reading in aeronautics. The following year they wrote to introduce themselves to Octave Chanute, a leading civil engineer and an authority on aviation who would remain a confidant of the brothers during the critical years from 1900 to 1905.",
+      "keywords": [
+        "brothers",
+        "bicycle",
+        "machines",
+        "flight",
+        "glider",
+        "lilienthal"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-7",
+      "type": "SWT",
+      "title": "Natural Resources",
+      "sourceText": "The rapid industrialization and urbanization of the past century have led to a significant increase in the consumption of natural resources. Of human origin, activities such as mining, deforestation, and fossil fuel extraction have caused a rapid depletion of raw materials, leading to concerns about the sustainability of our current consumption patterns. The extraction and use of these resources not only reduces their availability but also causes environmental degradation, including air and water pollution, soil erosion, and loss of biodiversity. Mining activities, for example, often involve the removal of vast amounts of soil and rock, resulting in the destruction of ecosystems and the displacement of wildlife. Deforestation, driven by the demand for timber, agricultural land, and urban development, leads to the loss of forests, which play a crucial role in regulating the Earth's climate and maintaining biodiversity. The burning of fossil fuels, such as coal, oil, and natural gas, contributes to greenhouse gas emissions, which drive climate change and result in extreme weather events, rising sea levels, and disruptions to ecosystems. Furthermore, the depletion of raw materials has economic implications. As resources become scarcer, their prices increase, leading to higher costs for industries and consumers. This could also drive geopolitical tensions as countries compete for access to remaining resources. T o address these challenges, it is essential to adopt more sustainable practices, such as recycling, using renewable energy sources, and implementing efficient resource management strategies. By doing so, we can reduce our reliance on finite resources, minimize environmental impacts, and ensure the long-term sustainability of our planet. In conclusion, the depletion of raw materials due to human-origin activities poses significant environmental, economic, and social challenges. It is crucial to promote sustainable practices to mitigate these impacts and preserve natural resources for future generations.",
+      "keywords": [
+        "resources",
+        "natural",
+        "activities",
+        "depletion",
+        "materials",
+        "environmental"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-8",
+      "type": "SWT",
+      "title": "LED Bulbs",
+      "sourceText": "LED bulbs, or light-emitting diode bulbs, have gained widespread popularity in recent years due to their energy efficiency and longevity. Unlike traditional incandescent bulbs, which produce light by heating a filament, LED bulbs generate light through the movement of electrons in a semiconductor material. This process not only consumes less energy but also produces less heat, making LED bulbs more environmentally friendly. Additionally, LED bulbs have a longer lifespan, often lasting up to 25,000 hours or more, compared to the 1,000hour lifespan of incandescent bulbs. This extended lifespan reduces the frequency of bulb replacements, contributing to lower maintenance costs and less waste. Moreover, LED bulbs are available in a variety of colors and brightness levels, providing consumers with more options for their lighting needs. They can be used in a wide range of applications, from residential lighting to commercial and industrial settings. The versatility of LED bulbs has also led to their adoption in innovative technologies, such as smart lighting systems that can be controlled remotely via smartphone apps. Despite their many advantages, LED bulbs have some limitations. The initial cost of LED bulbs is higher than that of traditional incandescent bulbs, which can be a barrier for some consumers. However, long-term energy savings and reduced replacement costs often offset this initial investment. Furthermore, some early models of LED bulbs experienced issues with color quality and light distribution, although advancements in technology have largely addressed these concerns. Overall, the transition to LED bulbs represents a significant step toward more sustainable and efficient lighting solutions, offering numerous benefits for both consumers and the environment.",
+      "keywords": [
+        "lighting",
+        "energy",
+        "incandescent",
+        "lifespan",
+        "consumers",
+        "traditional"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-9",
+      "type": "SWT",
+      "title": "Online Shopping Cards",
+      "sourceText": "In recent years, online shopping has become increasingly popular, thanks to its convenience and the vast array of products available at consumers' fingertips. The rise of e-commerce platforms has transformed the retail landscape, allowing people to shop from the comfort of their homes. A crucial aspect of this shift has been the use of bank cards for transactions. Credit and debit cards have become the preferred method of payment for online shoppers due to their ease of use and the security features they offer. However, this widespread adoption has also raised concerns about the potential risks associated with online transactions. Cybersecurity threats, such as hacking and phishing, have put consumers' financial information at risk, leading to increased efforts by banks and e-commerce platforms to enhance security measures. Moreover, the use of bank cards for online shopping has implications for consumer behavior. Studies have shown that people are more likely to make impulsive purchases when using credit cards compared to cash. The ease of online transactions, coupled with targeted advertising and personalized recommendations, can lead to overspending and financial strain for some consumers. On the other hand, online shopping with bank cards can offer benefits such as reward points, cashback, and fraud protection, which can enhance the overall shopping experience. As online shopping continues to grow, it is essential for consumers to remain vigilant about their financial security and to make informed decisions about their purchases. Both consumers and financial institutions must work together to ensure a safe and enjoyable online shopping experience.",
+      "keywords": [
+        "online",
+        "shopping",
+        "consumers",
+        "financial",
+        "transactions",
+        "security"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-10",
+      "type": "SWT",
+      "title": "Preschool Funding",
+      "sourceText": "A recent policy proposal suggests reducing funding for preschool education programs. Proponents of the proposal argue that reallocating these funds to other educational sectors, such as primary and secondary education, could yield better long-term benefits. They believe that addressing issues like classroom overcrowding and teacher shortages in these sectors is more pressing. Additionally, some proponents argue that parents should take more responsibility for early childhood education, rather than relying on government- funded programs. On the other hand, critics of the proposal emphasize the crucial role of early childhood education in laying the foundation for future academic and social success. Numerous studies have shown that children who attend high-quality preschool programs are more likely to perform better in school, graduate from high school, and have higher earning potential as adults. Critics also point out that cutting funding for preschool programs could disproportionately affect low-income families who rely on these services for affordable early childhood education. This reduction in funding could exacerbate existing inequalities in the education system. Furthermore, early childhood education programs provide essential support for working parents, enabling them to maintain stable employment while ensuring their children receive proper care and learning opportunities. The debate continues, with strong opinions on both sides regarding the best allocation of limited educational resources. Ultimately, the question remains whether the benefits of reallocating funds outweigh the potential long-term consequences of reducing support for early childhood education.",
+      "keywords": [
+        "education",
+        "programs",
+        "childhood",
+        "proposal",
+        "funding",
+        "preschool"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-11",
+      "type": "SWT",
+      "title": "Remote Inhabited Location",
+      "sourceText": "The most remote inhabited location on Earth is a place called Tristan da Cunha. As of Feb. 17, 2022, there were 257 people, mostly British citizens, living on this archipelago, which sees a ship carrying mail, cargo and passengers about once a month. Tristan da Cunha is located at 37 degrees south latitude and 12 degrees west longitude, 1,242 miles from St. Helena and 1,740 miles from the nearest mainland, the Cape of Good Hope, South Africa. It sits in the South Atlantic Ocean, between South America and Africa, west and slightly south of the Cape of Good Hope. Tristan is circular in shape and is about 6 miles in diameter with a total area of only about 30 square miles. The summer season falls between December and March. During the winter months, the central volcanic peak of Tristan, which rises to a height of 6,760 feet, is covered in snow. Tristan da Cunha, the main island, is the only inhabited island in the chain. The other islands that make up the archipelago are not populated by humans. Today, Tristan da Cunha is certainly off the beaten path and is considered the most remote inhabited island on the planet. However, in the 17th and 18th centuries, the archipelago was on the preferred maritime route to the Cape of Good Hope and the Indian Ocean.",
+      "keywords": [
+        "tristan",
+        "inhabited",
+        "archipelago",
+        "island",
+        "remote",
+        "degrees"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-12",
+      "type": "SWT",
+      "title": "Intelligence",
+      "sourceText": "People differ greatly in all aspects of what is casually known as intelligence. The differences are apparent not only in school, from kindergarten to college, but also in the most ordinary circumstances: in the words people use and comprehend, in their differing abilities to read a map or follow directions, or in their capacities for remembering telephone numbers or figuring change. The variations in these specific skills are so common that they are often taken for granted. Yet what makes people so different? It would be reasonable to think that the environment is the source of differences in cognitive skills - that we are what we learn. It is clear, for example, that human beings are not born with a full vocabulary; they have to learn words. Hence, learning must be the mechanism by which differences in vocabulary arise among individuals. And differences in experience - say, in the extent to which parents model and encourage vocabulary skills or in the quality of language training provided by schools - must be responsible for individual differences in learning. Earlier in this century, psychology was in fact dominated by environmental explanations for variance in cognitive abilities. More recently, however, most psychologists have begun to embrace a more balanced view: one in which nature and nurture interact in cognitive development. Over the past few decades, studies in genetics have pointed to a substantial role for heredity in molding the components of the intellect, and researchers have even begun to track down the genes involved in cognitive function. These findings do not refute the notion that environmental factors shape the learning process. Instead, they suggest that differences in people's genes affect how easily they learn.",
+      "keywords": [
+        "differences",
+        "people",
+        "cognitive",
+        "skills",
+        "vocabulary",
+        "learning"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-13",
+      "type": "SWT",
+      "title": "Hydrogen-powered Flight",
+      "sourceText": "Last month, Airbus announced plans to overhaul an A380 airliner by adding a hydrogen-combustion engine to the outside of the plane and installing monitoring equipment. With the changes, the company will be able to test hydrogen-powered flight in real-world conditions. The move is part of a broader industry goal to reach net-zero carbon emissions by 2050. Passenger air travel is a growing contributor to climate change, making up about three percent of carbon emissions worldwide in 2021. While flying less and investing in more efficient planes can help reduce emissions, new technologies will likely be needed to reach net-zero. Other solutions, like battery-powered air taxis and sustainable aviation fuels, may help cut emissions, but hydrogen in particular might be one of the major paths forward to net-zero because it could be used widely across the industry, from shorter regional hops to longer flights with larger planes. \"Understanding emissions from hydrogen combustion in real-air conditions is one of the major goals of this testing program, Simpson says. While burning liquid hydrogen doesn't produce CO2, the most abundant greenhouse gas, researchers are still eager to learn more about emissions from hydrogen-powered flight. Hydrogen engines will still produce some nitro-oxides, which are common pollutants, as well as water vapor, which acts as a greenhouse gas in the atmosphere. The test engine will also allow Airbus to learn more about how to run hydrogen combustion in flight. Researchers can change the operating conditions of the engine, like the fuel-to-air ratio it burns and the temperature it runs at, to learn more about how to most efficiently power a hydrogen-powered plane.",
+      "keywords": [
+        "hydrogen",
+        "emissions",
+        "powered",
+        "combustion",
+        "engine",
+        "flight"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-14",
+      "type": "SWT",
+      "title": "Compulsory Reburial",
+      "sourceText": "Human remains are a fundamental part of the archaeological record, offering unique insights into the lives of individuals and populations in the past. Recently, a new set of challenges to the study of human remains has emerged from a rather unexpected direction: the British government revised its interpretation of nineteenth- century burial legislation to drastically curtail the ability of archaeologists to study human remains of any age excavated in England and Wales. This paper examines these extraordinary events and the legal, political, and ethical questions that they raise. In April 2008 the British government announced that, henceforth, all human remains archaeologically excavated in England and Wales should be reburied after a two-year period of scientific analysis. Not only would internationally important prehistoric remains have to be returned to the ground, removing them from public view, but there would no longer be any possibility of long-term scientific investigation as new techniques and methods emerge and develop in the future. Thus, while faunal remains, potsherds, artifacts, and environmental samples could be analyzed and re-analyzed in future years, human remains were to be effectively removed from the curation process. Archaeologists and other scientists were also concerned that this might be the first step towards a policy of reburying all human remains held in museum collections in England and Wales, including prehistoric, Roman, Saxon, Viking, and Medieval as well as more recent remains.",
+      "keywords": [
+        "remains",
+        "england",
+        "british",
+        "government",
+        "archaeologists",
+        "excavated"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-15",
+      "type": "SWT",
+      "title": "Anti-inflammatory Food",
+      "sourceText": "Research hasn't looked specifically at the anti-inflammatory benefits of eating foods that are in season. \"But it's generally accepted that eating what's in season is likely to be fresher, and there are obviously other benefits, including those for the environment,\" says Natalie McCormick, a research fellow in medicine at Harvard Medical School. Eating foods that are in season may also help your grocery bill. When it comes to anti-inflammatory foods, the goal should be to incorporate as many as you can into your overall diet. \"Our emphasis now is on eating patterns, because it seems that interactions between foods and their combinations have a greater effect than individual foods,\" says McCormick. Three diets in particular, she says, contain the right mix of elements: The Mediterranean diet, the DASH diet, and the Alternative Healthy Eating Index. These diets are similar in that they put an emphasis on foods that are also known to be anti-inflammatory. But just as importantly, these diets also eliminate foods that can decrease levels of inflammatory markers inside the body, including a substance called C-reactive protein. Mixing and matching different foods from these diets can help you tailor an anti-inflammatory approach that fits your personal tastes, as you can choose the freshest in-season offerings. Whole grains, legumes, and heart-healthy oils can be year-round staples, but mix and match your fruits and vegetables for more variety.",
+      "keywords": [
+        "inflammatory",
+        "eating",
+        "season",
+        "research",
+        "benefits",
+        "including"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-16",
+      "type": "SWT",
+      "title": "Prior Knowledge",
+      "sourceText": "What is known (prior knowledge or pre-existing knowledge) is the knowledge, skill or ability that a learner brings to a new learning encounter. This includes all knowledge that is available before the learning event, and which has been gathered or developed by any means, and in any situation, including both formal and, quite often, informal learning situations. Learners need enough previous knowledge and understanding to enable them to learn new things; they also need help making links with new and previous knowledge explicit. It is considered valuable to go through a process of what has been called 'activating prior knowledge. T [eachers] often go through this process at the beginning of a new topic. They also use introductory strategies at the beginning of lessons, which are continuations from previous lessons. In terms of the practicalities of teaching, this is a process of making children think about the topic or remember what has been covered already. In terms of theory, it has to do with activating particular schemas.",
+      "keywords": [
+        "knowledge",
+        "learning",
+        "previous",
+        "process",
+        "making",
+        "through"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-17",
+      "type": "SWT",
+      "title": "Natural Language",
+      "sourceText": "When people start thinking about language, the first question which often occurs to them is this: is language natural to humans? - in the same way that grunting is natural to pigs, and barking comes naturally to dogs. Or is it just something we happen to have learned? - in the same way that dogs may learn to beg, or elephants may learn to waltz, or humans may learn to play the guitar. Clearly, in one sense, children 'learn' whatever language they are exposed to, be it Chinese, Nootka or English. So no one would deny that 'learning' is very important. But the crucial question is whether children are born with 'blank sheets' in their head as far as language is concerned - or whether humans are 'programmed' with an outline knowledge of the structure of languages in general. This question of whether language is partly due to nature or wholly due to learning or nurture is often referred to as the nature-nurture controversy and has been discussed for centuries. For example, it was the topic of one of Plato's dialogues, the Cratylus. Controversies that have been going on for literally ages tend to behave in a characteristic fashion. They lie dormant for a while, then break out fiercely. This particular issue resurfaced in linguistics in 1959 when the linguist Noam Chomsky wrote a devastating and witty review of Verbal Behavior, a book by the Harvard psychologist B. F . Skinner (Skinner 1957; Chomsky 1959). This book claimed to 'explain' language as a set of habits gradually built up over the years. According to Skinner, no complicated innate or mental mechanisms are needed. All that is necessary is systematic observation of events in the external world, which prompts the speaker to utter sounds.",
+      "keywords": [
+        "language",
+        "question",
+        "humans",
+        "whether",
+        "skinner",
+        "natural"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-18",
+      "type": "SWT",
+      "title": "Product Life Cycle",
+      "sourceText": "Its product life cycle has 4 very clearly defined stages, each with its own characteristics that mean different things for businesses that are trying to manage the life cycle of their particular products. Introduction Stage - This stage of the cycle can be the most expensive for a company launching a new product. The size of the market for the product is small, which means sales are low, although they will be increasing. On the other hand, the cost of things like research and development, consumer testing, and the marketing needed to launch the product can be very high, especially if it's a competitive sector. Growth Stage - The growth stage is typically characterized by strong growth in sales and profits, and because the company can start to benefit from economies of scale in production, the profit margins, as well as the overall amount of profit, will increase. This makes it possible for businesses to invest more money in promotional activity to maximize the potential of this growth stage. Maturity Stage - During the maturity stage, the product is established and the aim for the manufacturer is now to maintain the market share they have built up. This is probably the most competitive time for most products and businesses need to invest wisely in any marketing they undertake. They also need to consider any product modifications or improvements to the production process which might give them a competitive advantage. Decline Stage - Eventually, the market for a product will start to shrink, and this is what's known as the decline stage. This shrinkage could be due to the market becoming saturated (i.e. all the customers who will buy the product have already purchased it), or because the consumers are switching to a different type of product.",
+      "keywords": [
+        "product",
+        "market",
+        "growth",
+        "businesses",
+        "competitive",
+        "different"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-19",
+      "type": "SWT",
+      "title": "Bank Overdraft",
+      "sourceText": "Banks provide short-term finance to companies in the form of an overdraft on a current account. The advantage of an overdraft is its flexibility. When the cash needs of the company increase due to seasonal factors, the company can continue to write cheques and watch the overdraft increase. When the goods and services are sold and cash begins to flow in, the company should be able to see the overdraft decrease again. The most obvious example of a business which operates in this pattern is farming. The farmer uses the overdraft to finance the acquisition of seed for arable farming, or to feed through the winter for stock farming, and to cover the period when the crops or animals are growing and maturing. The overdraft is reduced when the crops or the animals are sold. The main disadvantage of an overdraft is that it is repayable on demand. The farmer whose crop fails because of bad weather knows the problem of being unable to repay the overdraft. Having overdraft financing increases the worries of those who manage the company. The other disadvantage is that the interest payable on overdrafts is variable. When interest rates increase, the cost of the overdraft increases. Furthermore, for small companies, there are often complaints that the rate of interest charged is high compared with that available to larger companies. The banks answer that the rates charged reflect relative risk and it is their experience that small companies are more risky.",
+      "keywords": [
+        "overdraft",
+        "companies",
+        "company",
+        "increase",
+        "farming",
+        "interest"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "swt-live-20",
+      "type": "SWT",
+      "title": "New Women",
+      "sourceText": "The concept of the \"New Woman\" emerged in Britain and North America during a time of social and cultural transformation. This idea was notably advanced by a writer named Sarah, who authored a book that sparked significant debate among commentators. Her work explored the shifting roles and expectations of middle-class women, focusing on key areas such as financial independence, employment opportunities, and the nature of marriage. Sarah's arguments emphasized the need to protect and uplift women's status in society, highlighting the challenges they faced in a male-dominated structure. Although her ideas received mixed responses, with some embracing the push for gender equality while others criticized or resisted the change, the impact of her book was undeniable. It contributed to broader discussions about women's rights, autonomy, and social roles. Sarah's advocacy was part of a larger movement that sought to redefine the place of women not only in the domestic sphere but also in public and professional life. Despite the resistance and the fact that her vision wasn't fully realized at the time, the notion of the \"New Woman\" left a lasting impression and has since been commemorated as an important milestone in the history of women's movements. It represented a growing awareness of gender inequality and laid the groundwork for future reforms and feminist thought.",
+      "keywords": [
+        "social",
+        "gender",
+        "concept",
+        "emerged",
+        "britain",
+        "america"
+      ],
+      "isNew": false
+    }
+  ],
+  "we": [
+    {
+      "id": "we-live-1",
+      "type": "WE",
+      "title": "Wage Cap",
+      "sourceText": "Should there be a wage cap for highly-paid people? Is it good or bad?",
+      "keywords": [
+        "should",
+        "there",
+        "highly",
+        "people"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "we-live-2",
+      "type": "WE",
+      "title": "Work-Life Balance",
+      "sourceText": "The time people devote to their jobs leaves very little time for their personal lives. How widespread is this problem? What problems can this shortage of time cause?",
+      "keywords": [
+        "people",
+        "devote",
+        "their",
+        "leaves",
+        "little",
+        "personal"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "we-live-3",
+      "type": "WE",
+      "title": "Building Design Influence",
+      "sourceText": "How does the design of buildings impact the quality of life in the places where people live and work, both positively and negatively?",
+      "keywords": [
+        "design",
+        "buildings",
+        "impact",
+        "quality",
+        "places",
+        "where"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "we-live-4",
+      "type": "WE",
+      "title": "Online vs Traditional Education",
+      "sourceText": "Some people believe that online education is more effective and convenient than traditional classroom learning, while others argue that face-to-face education provides better interaction and understanding. Discuss both views and give examples based on your own experience.",
+      "keywords": [
+        "people",
+        "believe",
+        "online",
+        "education",
+        "effective",
+        "convenient"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "we-live-5",
+      "type": "WE",
+      "title": "Study Location Choice",
+      "sourceText": "People often choose to study abroad in search of better educational opportunities, while others believe that quality education can be obtained within one's own country. Do you agree or disagree?",
+      "keywords": [
+        "people",
+        "often",
+        "choose",
+        "study",
+        "abroad",
+        "search"
+      ],
+      "isNew": true
+    },
+    {
+      "id": "we-live-6",
+      "type": "WE",
+      "title": "Wage Cap Debate",
+      "sourceText": "There should be a maximum limit to the wage of high-paying jobs as some of them make too much. Do you agree with this statement? Please give your opinion.",
+      "keywords": [
+        "there",
+        "should",
+        "maximum",
+        "limit",
+        "paying",
+        "agree"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-7",
+      "type": "WE",
+      "title": "Travel for Education",
+      "sourceText": "Some believe the value of travel is overrated. \"One brilliant scholar never leaves the home base.\" People argue whether travel is or not a necessary component of quality education. T o what extent do you agree with it?",
+      "keywords": [
+        "believe",
+        "value",
+        "travel",
+        "overrated",
+        "brilliant",
+        "scholar"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-8",
+      "type": "WE",
+      "title": "Studying Home vs Abroad",
+      "sourceText": "Some people stay in their home country to become scholars, while others choose to go abroad for their scholarly pursuits. What are the advantages and disadvantages of each choice?",
+      "keywords": [
+        "people",
+        "their",
+        "country",
+        "become",
+        "scholars",
+        "while"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-9",
+      "type": "WE",
+      "title": "Social Media Use",
+      "sourceText": "How can you achieve a healthy and balanced use of social media? What are some tips or strategies to follow?",
+      "keywords": [
+        "achieve",
+        "healthy",
+        "balanced",
+        "social",
+        "media",
+        "strategies"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-10",
+      "type": "WE",
+      "title": "Activity Age Limits",
+      "sourceText": "There are certain activities that may not be suitable for the elderly. Please cite examples of such activities along with the maximum suitable age for these activities.",
+      "keywords": [
+        "there",
+        "certain",
+        "activities",
+        "suitable",
+        "elderly",
+        "please"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-11",
+      "type": "WE",
+      "title": "Role of Television",
+      "sourceText": "Television has many functions to play in everyone's life. For some it's relaxation; for some, it is the companion. T [o] what extent do you think the statement is true? Please provide your argument and supporting evidence from your own experience.",
+      "keywords": [
+        "television",
+        "functions",
+        "everyone",
+        "relaxation",
+        "companion",
+        "extent"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-12",
+      "type": "WE",
+      "title": "Advanced technology",
+      "sourceText": "Advanced technology such as artificial intelligence can translate a foreign language easily. Do you think learning a foreign language is still necessary? Support with your own experience.",
+      "keywords": [
+        "advanced",
+        "technology",
+        "artificial",
+        "intelligence",
+        "translate",
+        "foreign"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-13",
+      "type": "WE",
+      "title": "Life in 21st Century",
+      "sourceText": "It is hard for children living in the 21st century than that in the past. Do you agree or disagree?",
+      "keywords": [
+        "children",
+        "living",
+        "century",
+        "agree",
+        "disagree"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-14",
+      "type": "WE",
+      "title": "Old vs Modern Buildings",
+      "sourceText": "More and more countries spend large amount of money on the restoration of buildings instead of on modern [housing. T] o what extent do you agree or disagree with this analysis? Support your writing with your experience or examples.",
+      "keywords": [
+        "countries",
+        "spend",
+        "large",
+        "amount",
+        "money",
+        "restoration"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-15",
+      "type": "WE",
+      "title": "Foreign Languages",
+      "sourceText": "Should schools make learning a foreign language compulsory?",
+      "keywords": [
+        "should",
+        "schools",
+        "learning",
+        "foreign",
+        "language",
+        "compulsory"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-16",
+      "type": "WE",
+      "title": "Future Jobs",
+      "sourceText": "In the future, people will work fewer hours at their jobs. T o what extent do you agree with it? Please support your opinion with your own experience.",
+      "keywords": [
+        "future",
+        "people",
+        "fewer",
+        "hours",
+        "their",
+        "extent"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-17",
+      "type": "WE",
+      "title": "Unemployment",
+      "sourceText": "Unemployment among young people is a serious problem. Some people suggest shorter working weeks instead of laying off employees. What do you think are the advantages and disadvantages? Is it also applicable to adults?",
+      "keywords": [
+        "unemployment",
+        "among",
+        "young",
+        "people",
+        "serious",
+        "problem"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-18",
+      "type": "WE",
+      "title": "Television",
+      "sourceText": "Television serves many functions. Watching TV makes us relax. We can learn knowledge and information from TV programs. Besides, TV can also be seen as a companion. T o what extent do you agree with this?",
+      "keywords": [
+        "television",
+        "serves",
+        "functions",
+        "watching",
+        "makes",
+        "relax"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-19",
+      "type": "WE",
+      "title": "New Inventions",
+      "sourceText": "In this technological world, the number of new inventions has been increasing. Please describe a new invention, and determine whether it will bring advantages or disadvantages.",
+      "keywords": [
+        "technological",
+        "world",
+        "number",
+        "inventions",
+        "increasing",
+        "please"
+      ],
+      "isNew": false
+    },
+    {
+      "id": "we-live-20",
+      "type": "WE",
+      "title": "Climate Change (V2)",
+      "sourceText": "Climate change is a concerning global issue. Who should take the responsibilities, governments, big companies or individuals? ) (",
+      "keywords": [
+        "climate",
+        "change",
+        "concerning",
+        "global",
+        "issue",
+        "should"
+      ],
+      "isNew": false
+    }
+  ]
+}
