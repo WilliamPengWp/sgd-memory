@@ -1,4 +1,4 @@
-export type DeckType = 'wfd' | 'sgd' | 'rs' | 'rts' | 'di' | 'ra' | 'fib';
+export type DeckType = 'wfd' | 'sgd' | 'rs' | 'rts' | 'di' | 'ra' | 'fib' | 'writing';
 export type Rating = 'forgot' | 'hard' | 'easy';
 
 export interface SrsCard {

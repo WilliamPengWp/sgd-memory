@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { Mic, Square, RotateCcw, Sparkles, Clock } from 'lucide-react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { Mic, Square, RotateCcw } from 'lucide-react';
 import { useMicRecorder } from '../utils/speech';
 import {
   useLiveSpeechRecognition,
   evaluateSpeakingAttempt,
   callGeminiWritingOrSpeakingCoach,
-  getStoredGeminiKey,
   PteSpeechScoreCard,
+  AiCoachDiagnosis,
 } from '../utils/aiEngine';
 
 interface AiSpeechScorerBoxProps {
   idPrefix: string;
   taskLabel: string;
-  prepSeconds: number;
   recordSeconds: number;
   expectedKeywordsOrWords: string[];
   isVerbatimTask?: boolean;
@@ -24,7 +23,6 @@ interface AiSpeechScorerBoxProps {
 export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
   idPrefix,
   taskLabel,
-  prepSeconds,
   recordSeconds,
   expectedKeywordsOrWords,
   isVerbatimTask = false,
@@ -36,282 +34,219 @@ export const AiSpeechScorerBox: React.FC<AiSpeechScorerBoxProps> = ({
   const stt = useLiveSpeechRecognition('en-US');
 
   const [scoreCard, setScoreCard] = useState<PteSpeechScoreCard | null>(null);
-  const [geminiFeedback, setGeminiFeedback] = useState<{
-    estimatedBand: number;
-    strengthsZh: string;
-    fixesZh: string;
-    upgradedSample: string;
-  } | null>(null);
-  const [loadingGemini, setLoadingGemini] = useState(false);
+  const [coach, setCoach] = useState<AiCoachDiagnosis | null>(null);
+  const [scoringAi, setScoringAi] = useState(false);
+  const [showTextFallback, setShowTextFallback] = useState(false);
+
+  const runFullAutoScoring = useCallback(
+    async (spokenText: string, durSec: number, hesitations: number) => {
+      const card = evaluateSpeakingAttempt({
+        transcript: spokenText,
+        durationSec: Math.max(durSec, 3),
+        hesitationCount: hesitations,
+        expectedKeywordsOrSentence: expectedKeywordsOrWords,
+        isVerbatimTask,
+      });
+      setScoreCard(card);
+      onScored?.(card.overallBand);
+
+      if (spokenText.trim().length >= 3) {
+        setScoringAi(true);
+        const diagnosis = await callGeminiWritingOrSpeakingCoach({
+          taskType: taskLabel,
+          promptText: promptSummary,
+          userAnswer: spokenText,
+        });
+        setCoach(diagnosis);
+        setScoringAi(false);
+      }
+    },
+    [expectedKeywordsOrWords, isVerbatimTask, onScored, promptSummary, taskLabel]
+  );
 
   useEffect(() => {
     mic.reset();
     stt.stop();
     stt.setTranscript('');
     setScoreCard(null);
-    setGeminiFeedback(null);
+    setCoach(null);
+    setScoringAi(false);
+    setShowTextFallback(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resetTrigger]);
 
-  // Synchronize STT start/stop with Mic recording phase
   useEffect(() => {
     if (mic.phase === 'recording' && !stt.isListening) {
       stt.start();
     } else if (mic.phase === 'recorded') {
       if (stt.isListening) stt.stop();
-      const card = evaluateSpeakingAttempt({
-        transcript: stt.transcript,
-        durationSec: Math.max(mic.recordedSec, stt.durationSec, 3),
-        hesitationCount: stt.hesitations,
-        expectedKeywordsOrSentence: expectedKeywordsOrWords,
-        isVerbatimTask,
-      });
-      setScoreCard(card);
-      onScored?.(card.overallBand);
+      // Give browser SpeechRecognition 250ms to flush final interim result
+      const t = window.setTimeout(() => {
+        const finalTranscript = stt.latestTranscriptRef.current;
+        runFullAutoScoring(
+          finalTranscript,
+          Math.max(mic.recordedSec, stt.durationSec, 3),
+          stt.hesitations
+        );
+      }, 250);
+      return () => window.clearTimeout(t);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mic.phase]);
 
-  const handleManualReScore = () => {
-    const card = evaluateSpeakingAttempt({
-      transcript: stt.transcript,
-      durationSec: Math.max(mic.recordedSec, 6),
-      hesitationCount: stt.hesitations,
-      expectedKeywordsOrSentence: expectedKeywordsOrWords,
-      isVerbatimTask,
-    });
-    setScoreCard(card);
-    onScored?.(card.overallBand);
-  };
-
-  const handleAskGemini = async () => {
-    if (!stt.transcript.trim()) return;
-    setLoadingGemini(true);
-    const res = await callGeminiWritingOrSpeakingCoach({
-      taskType: taskLabel,
-      promptText: promptSummary,
-      userAnswer: stt.transcript,
-    });
-    setGeminiFeedback(res);
-    setLoadingGemini(false);
-  };
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-      <div className="mic-recorder-box" id={`${idPrefix}-ai-scorer`}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', flexWrap: 'wrap' }}>
-          <span className="tag tag-ocean">
-            <Mic size={13} />
-            {taskLabel} · AI 即時語音評分
-          </span>
-
+    <div className="ai-speech-unit" id={`${idPrefix}-ai-scorer`}>
+      {/* Primary Action Bar */}
+      <div className="ai-mic-bar">
+        <div className="ai-mic-status">
           {mic.phase === 'idle' && (
-            <span style={{ fontSize: '0.79rem', color: 'var(--text-secondary)' }}>
-              開口同步啟動語音轉文字＋流利度分析（上限 {recordSeconds}s）
-            </span>
-          )}
-
-          {mic.phase === 'prep' && (
-            <span className="tag tag-amber">
-              <Clock size={13} />
-              準備倒數 {mic.secondsLeft}s…
-            </span>
+            <button
+              type="button"
+              className="btn btn-primary btn-mic-main"
+              onClick={() => {
+                setScoreCard(null);
+                setCoach(null);
+                mic.startImmediate(recordSeconds);
+              }}
+            >
+              <Mic size={16} />
+              開始口說回答（AI 自動評分）
+            </button>
           )}
 
           {mic.phase === 'recording' && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-              <span className="tag tag-coral">● 錄音＆AI聽寫中 剩 {mic.secondsLeft}s</span>
-              <div className="mic-level-track">
-                <div className="mic-level-bar" style={{ width: `${mic.level}%` }} />
-              </div>
-            </div>
-          )}
-
-          {mic.phase === 'recorded' && (
-            <span className="tag tag-jade">錄音完成 ({mic.recordedSec}s) · 已產出 AI 評分單</span>
-          )}
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {mic.phase === 'idle' && (
-            <>
-              {prepSeconds > 0 && (
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  style={{ padding: '0.44rem 0.8rem', fontSize: '0.79rem' }}
-                  onClick={() => {
-                    setScoreCard(null);
-                    mic.startWithPrep(prepSeconds, recordSeconds);
-                  }}
-                >
-                  <Clock size={14} />
-                  倒數開麥 ({prepSeconds}s+{recordSeconds}s)
-                </button>
-              )}
-              <button
-                type="button"
-                className="btn btn-primary"
-                style={{ padding: '0.44rem 0.9rem', fontSize: '0.79rem' }}
-                onClick={() => {
-                  setScoreCard(null);
-                  mic.startImmediate(recordSeconds);
-                }}
-              >
-                <Mic size={14} />
-                立即開口測分
-              </button>
-            </>
-          )}
-
-          {(mic.phase === 'prep' || mic.phase === 'recording') && (
             <button
               type="button"
-              className="btn btn-secondary"
-              style={{ padding: '0.44rem 0.85rem', fontSize: '0.79rem', borderColor: 'var(--accent-coral)' }}
+              className="btn btn-stop-recording"
               onClick={() => {
                 mic.stopRecording();
                 stt.stop();
               }}
             >
-              <Square size={14} />
-              完成並看 AI 分數
+              <Square size={15} />
+              完成回答 · 剩 {mic.secondsLeft}s
             </button>
           )}
 
           {mic.phase === 'recorded' && (
-            <>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
               {mic.audioUrl && (
-                <audio controls src={mic.audioUrl} style={{ height: '32px', maxWidth: '200px' }} />
+                <audio controls src={mic.audioUrl} style={{ height: '32px', maxWidth: '190px' }} />
               )}
               <button
                 type="button"
-                className="btn btn-ghost"
+                className="btn btn-secondary"
+                style={{ padding: '0.42rem 0.8rem', fontSize: '0.8rem' }}
                 onClick={() => {
                   mic.reset();
                   stt.stop();
                   stt.setTranscript('');
                   setScoreCard(null);
-                  setGeminiFeedback(null);
+                  setCoach(null);
                 }}
               >
                 <RotateCcw size={14} />
-                重測
+                重錄一次
               </button>
-            </>
+            </div>
           )}
         </div>
+
+        {mic.phase === 'recording' && (
+          <div className="mic-live-indicator">
+            <span className="rec-dot" />
+            <div className="mic-level-track">
+              <div className="mic-level-bar" style={{ width: `${mic.level}%` }} />
+            </div>
+          </div>
+        )}
+
+        {mic.phase === 'idle' && !scoreCard && (
+          <button
+            type="button"
+            className="text-link-subtle"
+            onClick={() => setShowTextFallback((v) => !v)}
+          >
+            {showTextFallback ? '收起文字輸入' : '不方便開麥？改用文字測 AI 評分'}
+          </button>
+        )}
       </div>
 
-      {/* Live Speech Transcript Preview / Editable Fallback */}
-      {(mic.phase === 'recording' || mic.phase === 'recorded' || stt.transcript) && (
-        <div
-          className="animate-in"
-          style={{
-            padding: '0.85rem 1rem',
-            borderRadius: 'var(--radius-md)',
-            background: 'var(--bg-input)',
-            border: '1px solid var(--border-subtle)',
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
-            <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>
-              🎤 AI 即時語音辨識逐字稿（若瀏覽器未開語音辨識，亦可直接貼上或修改文字測評）：
-            </span>
-            {mic.phase !== 'recording' && (
-              <button
-                type="button"
-                className="btn btn-ghost"
-                style={{ fontSize: '0.74rem', padding: '0.2rem 0.5rem' }}
-                onClick={handleManualReScore}
-              >
-                重新計算評分
-              </button>
-            )}
-          </div>
-          <textarea
-            className="text-area"
-            style={{ minHeight: '62px', padding: '0.55rem 0.75rem', fontSize: '0.86rem' }}
-            placeholder="正在聆聽你的英文發音…"
-            value={stt.transcript}
-            onChange={(e) => stt.setTranscript(e.target.value)}
-          />
+      {mic.error && (
+        <div style={{ fontSize: '0.8rem', color: 'var(--accent-amber)' }}>
+          {mic.error}
         </div>
       )}
 
-      {/* AI Score Card Result */}
-      {scoreCard && (
-        <div
-          className="animate-in"
-          style={{
-            padding: '1rem 1.1rem',
-            borderRadius: 'var(--radius-md)',
-            background: 'var(--bg-input)',
-            border: `1px solid ${
-              scoreCard.overallBand >= 54 ? 'hsla(162,68%,45%,0.35)' : 'hsla(38,92%,56%,0.35)'
-            }`,
-          }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.65rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
-              <span
-                className={scoreCard.overallBand >= 54 ? 'tag tag-jade' : 'tag tag-amber'}
-                style={{ fontSize: '0.9rem', padding: '0.3rem 0.7rem' }}
-              >
-                PTE 口說模擬：{scoreCard.overallBand} / 90
-              </span>
-              <span className="tag tag-neutral">Content {scoreCard.contentScore}/6</span>
-              <span className="tag tag-neutral">Fluency {scoreCard.fluencyScore}/5 ({scoreCard.wpm} WPM)</span>
-              <span className="tag tag-neutral">Pronunciation {scoreCard.pronunciationScore}/5</span>
-            </div>
-
-            {getStoredGeminiKey() && (
+      {/* Live Speech Transcript / Manual Text Input */}
+      {(mic.phase === 'recording' || mic.phase === 'recorded' || showTextFallback || stt.transcript) && (
+        <div className="transcript-box">
+          <textarea
+            className="text-area-clean"
+            rows={2}
+            placeholder={
+              mic.phase === 'recording'
+                ? '正在聆聽並即時轉寫你的英文發音…'
+                : '輸入或修改你的英文回答，按右側按鈕立即重算 AI 分數…'
+            }
+            value={stt.transcript}
+            onChange={(e) => stt.setTranscript(e.target.value)}
+          />
+          {mic.phase !== 'recording' && stt.transcript.trim().length > 0 && (
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0.4rem' }}>
               <button
                 type="button"
                 className="btn btn-secondary"
-                style={{ fontSize: '0.76rem', padding: '0.35rem 0.75rem' }}
-                disabled={loadingGemini}
-                onClick={handleAskGemini}
+                style={{ padding: '0.32rem 0.75rem', fontSize: '0.78rem' }}
+                onClick={() =>
+                  runFullAutoScoring(stt.transcript, Math.max(mic.recordedSec, 8), stt.hesitations)
+                }
               >
-                <Sparkles size={13} />
-                {loadingGemini ? 'Gemini 雙審中…' : '呼叫 Gemini 真人級雙審改寫'}
+                更新 AI 評分
               </button>
-            )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Unified Automatic AI Score Card */}
+      {scoreCard && (
+        <div
+          className={`ai-score-card animate-in ${
+            scoreCard.overallBand >= 54 ? 'pass' : 'warn'
+          }`}
+        >
+          <div className="ai-score-top">
+            <div className="ai-band-badge">
+              <span className="ai-band-num">{scoreCard.overallBand}</span>
+              <span className="ai-band-max">/ 90</span>
+            </div>
+            <div className="ai-subscores">
+              <span>內容 {scoreCard.contentScore}/6</span>
+              <span>流利度 {scoreCard.fluencyScore}/5 ({scoreCard.wpm} WPM)</span>
+              <span>發音 {scoreCard.pronunciationScore}/5</span>
+            </div>
           </div>
 
-          <div style={{ fontSize: '0.83rem', marginBottom: '0.45rem' }}>{scoreCard.verdictZh}</div>
+          <div className="ai-verdict-line">{scoreCard.verdictZh}</div>
 
-          {scoreCard.matchedWords.length > 0 && (
-            <div style={{ fontSize: '0.76rem', color: 'hsl(162, 76%, 64%)' }}>
-              ✓ 發音清晰命中詞：{scoreCard.matchedWords.slice(0, 12).join(', ')}
-            </div>
-          )}
-          {scoreCard.missedKeywords.length > 0 && (
-            <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>
-              可補充關鍵詞：{scoreCard.missedKeywords.join(', ')}
+          {scoringAi && (
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.4rem' }}>
+              AI 考官正在雙審診斷語意與結構…
             </div>
           )}
 
-          {geminiFeedback && (
-            <div
-              className="animate-in"
-              style={{
-                marginTop: '0.75rem',
-                paddingTop: '0.75rem',
-                borderTop: '1px solid var(--border-subtle)',
-                fontSize: '0.82rem',
-              }}
-            >
-              <div style={{ fontWeight: 700, color: 'hsl(197, 88%, 72%)', marginBottom: '0.25rem' }}>
-                🤖 Gemini 2.5 雙審考官診斷（預估 {geminiFeedback.estimatedBand} 分）：
+          {coach && !scoringAi && (
+            <div className="ai-coach-notes">
+              <div>✓ {coach.strengthsZh}</div>
+              <div style={{ color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                → {coach.fixesZh}
               </div>
-              <div style={{ marginBottom: '0.25rem' }}>👍 亮點：{geminiFeedback.strengthsZh}</div>
-              <div style={{ marginBottom: '0.35rem', color: 'var(--accent-amber)' }}>
-                🔧 提分建議：{geminiFeedback.fixesZh}
-              </div>
-              <div style={{ color: 'var(--text-secondary)' }}>
-                ✨ 保留你原意的地道升級版：<em>“{geminiFeedback.upgradedSample}”</em>
-              </div>
+              {!isVerbatimTask && coach.upgradedSample && (
+                <div className="ai-sample-quote">
+                  參考自然說法：“{coach.upgradedSample}”
+                </div>
+              )}
             </div>
           )}
         </div>
