@@ -712,6 +712,11 @@ Return ONLY valid JSON with these exact keys:
     }
 
     if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+      const reqExt = path.extname(safePath).toLowerCase();
+      if (reqExt && reqExt !== '.html') {
+        res.writeHead(404);
+        return res.end('Not found');
+      }
       filePath = path.join(DIST_DIR, 'index.html');
     }
 
@@ -719,9 +724,29 @@ Return ONLY valid JSON with these exact keys:
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
     const cacheHeader =
       ext === '.html' || ext === '.json' ? 'no-cache' : 'public, max-age=604800, immutable';
+    const stat = fs.statSync(filePath);
+    const range = req.headers.range;
+
+    if (range && ext === '.mp3') {
+      const match = /bytes=(\d*)-(\d*)/.exec(range);
+      const start = match && match[1] ? parseInt(match[1], 10) : 0;
+      const end = match && match[2] ? parseInt(match[2], 10) : stat.size - 1;
+      if (start >= 0 && start < stat.size && end >= start && end < stat.size) {
+        res.writeHead(206, {
+          'Content-Type': contentType,
+          'Content-Range': `bytes ${start}-${end}/${stat.size}`,
+          'Accept-Ranges': 'bytes',
+          'Content-Length': end - start + 1,
+          'Cache-Control': cacheHeader,
+        });
+        return fs.createReadStream(filePath, { start, end }).pipe(res);
+      }
+    }
 
     res.writeHead(200, {
       'Content-Type': contentType,
+      'Content-Length': stat.size,
+      'Accept-Ranges': 'bytes',
       'Cache-Control': cacheHeader,
     });
     fs.createReadStream(filePath).pipe(res);

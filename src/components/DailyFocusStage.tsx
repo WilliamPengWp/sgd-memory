@@ -77,9 +77,11 @@ export const DailyFocusStage: React.FC<DailyFocusStageProps> = ({
   // FIB state
   const [fibChoice, setFibChoice] = useState<string | null>(null);
 
-  // SGD audio player ref
+  // SGD audio player ref (reused across s1 -> s2 -> s3 so mobile browsers never block chained playback)
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const seqTimerRef = useRef<number | null>(null);
   const [playingAudioSrc, setPlayingAudioSrc] = useState<string | null>(null);
+  const [sgdSeqStep, setSgdSeqStep] = useState<number | null>(null);
 
   // Writing states
   const [writingDraft, setWritingDraft] = useState('');
@@ -87,14 +89,24 @@ export const DailyFocusStage: React.FC<DailyFocusStageProps> = ({
   const [writingCoach, setWritingCoach] = useState<AiCoachDiagnosis | null>(null);
   const [writingLoading, setWritingLoading] = useState(false);
 
-  // Reset card states whenever currentEntry changes
-  useEffect(() => {
+  const stopAllAudio = () => {
     stopSpeaking();
+    if (seqTimerRef.current) {
+      window.clearTimeout(seqTimerRef.current);
+      seqTimerRef.current = null;
+    }
     if (audioRef.current) {
+      audioRef.current.onended = null;
+      audioRef.current.onerror = null;
       audioRef.current.pause();
-      audioRef.current = null;
     }
     setPlayingAudioSrc(null);
+    setSgdSeqStep(null);
+  };
+
+  // Reset card states whenever currentEntry changes
+  useEffect(() => {
+    stopAllAudio();
     setAttempted(false);
     setLatestScore(undefined);
     setRevealHint(false);
@@ -106,20 +118,63 @@ export const DailyFocusStage: React.FC<DailyFocusStageProps> = ({
     setWritingLint(null);
     setWritingCoach(null);
     setWritingLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentEntry?.uid]);
 
-  const playMp3 = (relPath: string) => {
-    stopSpeaking();
-    const fullUrl = resolvePublicAsset(relPath);
-    if (audioRef.current) {
-      audioRef.current.pause();
+  const playMp3 = (relPath: string, fallbackText?: string) => {
+    if (playingAudioSrc === relPath) {
+      stopAllAudio();
+      return;
     }
-    const el = new Audio(fullUrl);
+    stopAllAudio();
+    const el = audioRef.current ?? new Audio();
     audioRef.current = el;
+    el.src = resolvePublicAsset(relPath);
     setPlayingAudioSrc(relPath);
     el.onended = () => setPlayingAudioSrc(null);
-    el.onerror = () => setPlayingAudioSrc(null);
-    el.play().catch(() => setPlayingAudioSrc(null));
+    el.onerror = () => {
+      setPlayingAudioSrc(null);
+      if (fallbackText) speakEnglish(fallbackText, accent, speechRate);
+    };
+    el.play().catch(() => {
+      setPlayingAudioSrc(null);
+      if (fallbackText) speakEnglish(fallbackText, accent, speechRate);
+    });
+  };
+
+  const playSgdSpeakersSequence = (speakers: Array<{ id: number; audio: string; text: string }>) => {
+    if (sgdSeqStep !== null) {
+      stopAllAudio();
+      return;
+    }
+    if (speakers.length === 0) return;
+    stopAllAudio();
+
+    const el = audioRef.current ?? new Audio();
+    audioRef.current = el;
+
+    const playStep = (idx: number) => {
+      if (idx >= speakers.length) {
+        setPlayingAudioSrc(null);
+        setSgdSeqStep(null);
+        return;
+      }
+      const sp = speakers[idx];
+      setSgdSeqStep(idx + 1);
+      setPlayingAudioSrc(sp.audio);
+      el.src = resolvePublicAsset(sp.audio);
+      el.onended = () => {
+        seqTimerRef.current = window.setTimeout(() => playStep(idx + 1), 320);
+      };
+      el.onerror = () => {
+        speakEnglish(sp.text, accent, speechRate, () => playStep(idx + 1));
+      };
+      el.play().catch(() => {
+        speakEnglish(sp.text, accent, speechRate, () => playStep(idx + 1));
+      });
+    };
+
+    playStep(0);
   };
 
   // All done screen!
@@ -541,10 +596,12 @@ export const DailyFocusStage: React.FC<DailyFocusStageProps> = ({
                 <button
                   type="button"
                   className="btn btn-audio-hero"
-                  onClick={() => playMp3(sgdItem.fullAudio)}
+                  onClick={() => playSgdSpeakersSequence(sgdItem.speakers)}
                 >
                   <Volume2 size={16} />
-                  {playingAudioSrc === sgdItem.fullAudio ? '播放中…' : '播放三人討論音檔'}
+                  {sgdSeqStep !== null
+                    ? `播放中（講者 ${sgdSeqStep} / ${sgdItem.speakers.length} · 點擊停止）`
+                    : '播放三人討論音檔'}
                 </button>
                 <button
                   type="button"
@@ -558,22 +615,37 @@ export const DailyFocusStage: React.FC<DailyFocusStageProps> = ({
 
             {(revealHint || attempted) && (
               <div className="sgd-speakers-grid animate-in">
-                {sgdItem.speakers.map((sp) => (
-                  <div key={sp.id} className="sgd-speaker-mini" onClick={() => playMp3(sp.audio)}>
-                    <img
-                      src={resolvePublicAsset(sp.image)}
-                      alt={`Speaker ${sp.id}`}
-                      className="sgd-thumb"
-                      loading="lazy"
-                    />
-                    <div>
-                      <div style={{ fontSize: '0.82rem', fontWeight: 600 }}>{sp.text}</div>
-                      <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>
-                        {sp.textZh}
+                {sgdItem.speakers.map((sp) => {
+                  const isPlayingThis = playingAudioSrc === sp.audio;
+                  return (
+                    <div
+                      key={sp.id}
+                      className="sgd-speaker-mini"
+                      style={
+                        isPlayingThis
+                          ? { borderColor: 'var(--accent-jade)', background: 'var(--accent-jade-soft)' }
+                          : undefined
+                      }
+                      onClick={() => playMp3(sp.audio, sp.text)}
+                    >
+                      <img
+                        src={resolvePublicAsset(sp.image)}
+                        alt={`Speaker ${sp.id}`}
+                        className="sgd-thumb"
+                        loading="lazy"
+                      />
+                      <div>
+                        <div style={{ fontSize: '0.82rem', fontWeight: 600 }}>
+                          {isPlayingThis ? '🔊 ' : ''}
+                          {sp.text}
+                        </div>
+                        <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>
+                          {sp.textZh}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
 
@@ -786,13 +858,23 @@ export const DailyFocusStage: React.FC<DailyFocusStageProps> = ({
         {/* ================= CLEAN SRS NEXT FOOTER ================= */}
         <footer className="focus-card-footer">
           {!attempted ? (
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '0.5rem 1rem',
+                width: '100%',
+              }}
+            >
               <span style={{ fontSize: '0.79rem', color: 'var(--text-muted)' }}>
                 完成上方作答後自動解鎖記憶排程評分
               </span>
               <button
                 type="button"
                 className="text-link-subtle"
+                style={{ whiteSpace: 'nowrap' }}
                 onClick={() => setAttempted(true)}
               >
                 已口頭練過，直接評分下一題 →
